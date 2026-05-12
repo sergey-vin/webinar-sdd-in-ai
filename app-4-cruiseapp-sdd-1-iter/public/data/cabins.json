@@ -1,0 +1,28 @@
+{
+  "decks": [
+    { "number": 3, "name": "Палуба \"Коралл\"", "cabinCount": 40 },
+    { "number": 4, "name": "Палуба \"Жемчуг\"", "cabinCount": 36 },
+    { "number": 5, "name": "Палуба \"Сапфир\"", "cabinCount": 30 },
+    { "number": 6, "name": "Палуба \"Изумруд\"", "cabinCount": 24 },
+    { "number": 7, "name": "Палуба \"Рубин\"", "cabinCount": 16 },
+    { "number": 8, "name": "Палуба \"Бриллиант\"", "cabinCount": 10 }
+  ],
+  "cabins": [
+    { "id": "cab-301", "number": "301", "type": "internal", "deck": 3, "price": 850, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар"] },
+    { "id": "cab-302", "number": "302", "type": "internal", "deck": 3, "price": 850, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар"] },
+    { "id": "cab-303", "number": "303", "type": "internal", "deck": 3, "price": 950, "capacity": 3, "available": false, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Доп. кровать"] },
+    { "id": "cab-310", "number": "310", "type": "window", "deck": 3, "price": 1200, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Иллюминатор"] },
+    { "id": "cab-401", "number": "401", "type": "internal", "deck": 4, "price": 900, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар"] },
+    { "id": "cab-410", "number": "410", "type": "window", "deck": 4, "price": 1300, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Окно"] },
+    { "id": "cab-415", "number": "415", "type": "window", "deck": 4, "price": 1400, "capacity": 3, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Окно", "Доп. кровать"] },
+    { "id": "cab-501", "number": "501", "type": "balcony", "deck": 5, "price": 1800, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты"] },
+    { "id": "cab-502", "number": "502", "type": "balcony", "deck": 5, "price": 1800, "capacity": 2, "available": false, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты"] },
+    { "id": "cab-510", "number": "510", "type": "balcony", "deck": 5, "price": 2000, "capacity": 3, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты", "Доп. кровать"] },
+    { "id": "cab-601", "number": "601", "type": "balcony", "deck": 6, "price": 2200, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты", "Фрукты"] },
+    { "id": "cab-605", "number": "605", "type": "balcony", "deck": 6, "price": 2400, "capacity": 3, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты", "Фрукты", "Доп. кровать"] },
+    { "id": "cab-701", "number": "701", "type": "suite", "deck": 7, "price": 3500, "capacity": 2, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты", "Джакузи", "Гостиная", "Батлер"] },
+    { "id": "cab-702", "number": "702", "type": "suite", "deck": 7, "price": 3500, "capacity": 2, "available": false, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Балкон", "Халаты", "Джакузи", "Гостиная", "Батлер"] },
+    { "id": "cab-801", "number": "801", "type": "suite", "deck": 8, "price": 5000, "capacity": 4, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Панорамный балкон", "Халаты", "Джакузи", "Гостиная", "Столовая", "Батлер", "Спа"] },
+    { "id": "cab-802", "number": "802", "type": "suite", "deck": 8, "price": 5000, "capacity": 4, "available": true, "amenities": ["Кондиционер", "ТВ", "Сейф", "Мини-бар", "Панорамный балкон", "Халаты", "Джакузи", "Гостиная", "Столовая", "Батлер", "Спа"] }
+  ]
+}

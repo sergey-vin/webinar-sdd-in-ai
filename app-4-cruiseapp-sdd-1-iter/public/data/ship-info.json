@@ -1,0 +1,18 @@
+{
+  "name": "MS Oceanic Dream",
+  "currentPort": "Санторини, Греция",
+  "nextPort": "Ираклион, Крит",
+  "weather": {
+    "temp": 26,
+    "condition": "Солнечно",
+    "icon": "sun"
+  },
+  "shipTime": "14:30",
+  "homeTime": "15:30",
+  "timezone": {
+    "shipTimezone": "Europe/Athens",
+    "shipUtcOffset": 3,
+    "homeTimezone": "Europe/Moscow",
+    "homeUtcOffset": 3
+  }
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "evt-1",
+    "title": "Утреннее шоу \"Морской бриз\"",
+    "description": "Зажигательное шоу с участием танцоров и акробатов",
+    "category": "show",
+    "location": "Театр \"Нептун\"",
+    "deck": 5,
+    "startTime": "10:00",
+    "endTime": "11:30",
+    "day": "today"
+  },
+  {
+    "id": "evt-2",
+    "title": "Аквааэробика",
+    "description": "Бодрящая тренировка в открытом бассейне",
+    "category": "pool",
+    "location": "Бассейн \"Атлантика\"",
+    "deck": 9,
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-3",
+    "title": "Мастер-класс итальянской кухни",
+    "description": "Готовим пасту с шеф-поваром Марко",
+    "category": "restaurant",
+    "location": "Ресторан \"Средиземноморье\"",
+    "deck": 6,
+    "startTime": "12:00",
+    "endTime": "13:30",
+    "day": "today"
+  },
+  {
+    "id": "evt-4",
+    "title": "Экскурсия по Санторини",
+    "description": "Автобусная экскурсия с гидом по острову",
+    "category": "excursion",
+    "location": "Порт Санторини",
+    "deck": 1,
+    "startTime": "08:00",
+    "endTime": "14:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-5",
+    "title": "Йога на палубе",
+    "description": "Утренняя йога с видом на море",
+    "category": "sport",
+    "location": "Спортивная палуба",
+    "deck": 10,
+    "startTime": "07:00",
+    "endTime": "08:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-6",
+    "title": "Детский клуб \"Пираты\"",
+    "description": "Игры и квесты для детей 5-12 лет",
+    "category": "kids",
+    "location": "Детский клуб",
+    "deck": 8,
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-7",
+    "title": "Живая музыка: джаз-бэнд",
+    "description": "Вечер джаза с коктейлями",
+    "category": "music",
+    "location": "Бар \"Закат\"",
+    "deck": 7,
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-8",
+    "title": "Ужин капитана",
+    "description": "Торжественный ужин с приветственной речью капитана",
+    "category": "restaurant",
+    "location": "Главный ресторан \"Океан\"",
+    "deck": 5,
+    "startTime": "19:30",
+    "endTime": "22:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-9",
+    "title": "Вечернее шоу \"Звёзды моря\"",
+    "description": "Грандиозное шоу с иллюзионистом и певцами",
+    "category": "show",
+    "location": "Театр \"Нептун\"",
+    "deck": 5,
+    "startTime": "21:30",
+    "endTime": "23:00",
+    "day": "today"
+  },
+  {
+    "id": "evt-10",
+    "title": "Водное поло",
+    "description": "Дружеский матч между командами пассажиров",
+    "category": "pool",
+    "location": "Бассейн \"Атлантика\"",
+    "deck": 9,
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "day": "today"
+  },
+  {
+    "id": "evt-11",
+    "title": "Завтрак-буфет",
+    "description": "Шведский стол с панорамным видом",
+    "category": "restaurant",
+    "location": "Ресторан \"Горизонт\"",
+    "deck": 10,
+    "startTime": "07:00",
+    "endTime": "10:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-12",
+    "title": "Экскурсия по Криту",
+    "description": "Посещение Кносского дворца и старого города",
+    "category": "excursion",
+    "location": "Порт Ираклион",
+    "deck": 1,
+    "startTime": "09:00",
+    "endTime": "15:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-13",
+    "title": "Танцевальный мастер-класс: сальса",
+    "description": "Учимся танцевать сальсу с профессиональным хореографом",
+    "category": "show",
+    "location": "Зал \"Бриз\"",
+    "deck": 7,
+    "startTime": "16:00",
+    "endTime": "17:30",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-14",
+    "title": "Вечер караоке",
+    "description": "Пойте любимые песни в компании новых друзей",
+    "category": "music",
+    "location": "Бар \"Закат\"",
+    "deck": 7,
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-15",
+    "title": "Утреннее плавание",
+    "description": "Свободное посещение бассейна для ранних пташек",
+    "category": "pool",
+    "location": "Бассейн \"Атлантика\"",
+    "deck": 9,
+    "startTime": "06:30",
+    "endTime": "08:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-16",
+    "title": "Теннисный турнир",
+    "description": "Турнир по настольному теннису среди пассажиров",
+    "category": "sport",
+    "location": "Спортивный зал",
+    "deck": 10,
+    "startTime": "11:00",
+    "endTime": "13:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-17",
+    "title": "Детская дискотека",
+    "description": "Весёлая дискотека для детей с аниматорами",
+    "category": "kids",
+    "location": "Детский клуб",
+    "deck": 8,
+    "startTime": "17:00",
+    "endTime": "19:00",
+    "day": "tomorrow"
+  },
+  {
+    "id": "evt-18",
+    "title": "Гала-ужин",
+    "description": "Праздничный ужин из 5 блюд",
+    "category": "restaurant",
+    "location": "Главный ресторан \"Океан\"",
+    "deck": 5,
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "day": "tomorrow"
+  }
+]
