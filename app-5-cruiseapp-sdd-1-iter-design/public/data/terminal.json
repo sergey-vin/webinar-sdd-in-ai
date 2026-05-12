@@ -1,0 +1,106 @@
+{
+  "departure": {
+    "port": "Helsinki",
+    "terminal": "West Harbour Terminal 2",
+    "address": "Tyynenmerenkatu 14, 00220 Helsinki",
+    "checkinOpens": "08:30",
+    "checkinCloses": "10:00",
+    "boardingStarts": "09:30",
+    "whatToBring": [
+      "Valid passport or national ID",
+      "Booking confirmation (printed or digital)",
+      "Vehicle registration (if traveling by car)"
+    ],
+    "rules": [
+      "Arrive at least 1 hour before departure",
+      "No weapons or flammable items allowed",
+      "Pets must be in carriers or on a leash",
+      "Maximum luggage: 2 bags per person"
+    ],
+    "routeOptions": [
+      {
+        "id": "r1",
+        "mode": "car",
+        "title": "Drive & Park",
+        "duration": "25 min",
+        "cost": "€15/day parking",
+        "detail": "EuroPark West Harbour — 450 spaces, covered",
+        "steps": [
+          { "instruction": "Take E75 towards West Harbour", "distance": "12 km" },
+          { "instruction": "Follow signs to Terminal 2 parking", "distance": "0.5 km" },
+          { "instruction": "Walk to check-in hall", "distance": "200 m" }
+        ]
+      },
+      {
+        "id": "r2",
+        "mode": "taxi",
+        "title": "Taxi / Uber / Bolt",
+        "duration": "20 min",
+        "cost": "~€18–25",
+        "detail": "Drop-off at Terminal 2 entrance",
+        "steps": [
+          { "instruction": "Request ride to West Harbour Terminal 2", "distance": "" },
+          { "instruction": "Drop-off at the main entrance", "distance": "" }
+        ]
+      },
+      {
+        "id": "r3",
+        "mode": "transit",
+        "title": "Tram Line 6",
+        "duration": "35 min",
+        "cost": "€3.10",
+        "detail": "From Helsinki Central Station",
+        "steps": [
+          { "instruction": "Take Tram 6 from Helsinki Central", "distance": "" },
+          { "instruction": "Exit at Länsiterminaali stop", "distance": "" },
+          { "instruction": "Walk to Terminal 2", "distance": "300 m" }
+        ]
+      }
+    ]
+  },
+  "arrival": {
+    "port": "Tallinn",
+    "terminal": "D-Terminal",
+    "address": "Lootsi 13, 10151 Tallinn",
+    "routeOptions": [
+      {
+        "id": "a1",
+        "mode": "walk",
+        "title": "Walk to Old Town",
+        "duration": "15 min",
+        "cost": "Free",
+        "detail": "Scenic walk to city center",
+        "steps": [
+          { "instruction": "Exit terminal towards Sadama street", "distance": "100 m" },
+          { "instruction": "Walk along Ahtri street", "distance": "600 m" },
+          { "instruction": "Arrive at Viru Gate / Old Town", "distance": "400 m" }
+        ]
+      },
+      {
+        "id": "a2",
+        "mode": "taxi",
+        "title": "Taxi / Bolt",
+        "duration": "5 min",
+        "cost": "~€5–8",
+        "detail": "Taxi rank at terminal exit",
+        "steps": [
+          { "instruction": "Take taxi from terminal rank", "distance": "" },
+          { "instruction": "To your hotel or destination", "distance": "" }
+        ]
+      },
+      {
+        "id": "a3",
+        "mode": "transit",
+        "title": "Tram Line 1 or 2",
+        "duration": "10 min",
+        "cost": "€2.00",
+        "detail": "To city center",
+        "steps": [
+          { "instruction": "Walk to Linnahall tram stop", "distance": "200 m" },
+          { "instruction": "Take Tram 1 or 2 towards Keskus", "distance": "" },
+          { "instruction": "Exit at your destination stop", "distance": "" }
+        ]
+      }
+    ]
+  }
+}

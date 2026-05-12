@@ -1,0 +1,100 @@
+{
+  "tabs": {
+    "trip": "Trip",
+    "schedule": "Schedule",
+    "map": "Map",
+    "booking": "Booking",
+    "logistics": "Logistics"
+  },
+  "home": {
+    "title": "Trip",
+    "dayOf": "Day {day} of {total}",
+    "yourJourney": "Your journey",
+    "viewAll": "View all",
+    "whileAboard": "While you're aboard",
+    "seeAll": "See all",
+    "shipTime": "Ship time",
+    "eta": "ETA",
+    "speed": "Speed",
+    "wind": "Wind",
+    "sea": "Sea"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "today": "Today · Ship time",
+    "mySchedule": "My Schedule",
+    "events": "events",
+    "event": "event",
+    "noEvents": "No events in this category today.",
+    "yourEvents": "Your personal events",
+    "noEventsYet": "No events yet",
+    "addPrompt": "Go to the schedule and tap + to add events to your personal list.",
+    "allEvents": "All events",
+    "categories": {
+      "all": "All",
+      "music": "Music",
+      "food": "Food & bars",
+      "family": "Family",
+      "shops": "Shops",
+      "spa": "Spa",
+      "show": "Shows"
+    }
+  },
+  "map": {
+    "title": "Ship Map",
+    "deck": "Deck",
+    "searchPlaceholder": "Search venues, restaurants, bars...",
+    "getMe": "Get me to",
+    "venues": "venues",
+    "shops": "shops"
+  },
+  "booking": {
+    "title": "Booking",
+    "selectCabin": "Select your cabin",
+    "reviewSelection": "Review your selection",
+    "availableOn": "Available on Deck {number}",
+    "cabin": "Cabin",
+    "type": "Type",
+    "size": "Size",
+    "description": "Description",
+    "pricePerNight": "Price per night",
+    "sendRequest": "Send Booking Request",
+    "requestSent": "Request Sent!",
+    "requestConfirm": "Your booking request for cabin {number} has been submitted. We'll confirm your reservation shortly.",
+    "backToCabins": "Back to Cabins",
+    "back": "Back",
+    "from": "from",
+    "available": "available",
+    "soldOut": "Sold out",
+    "booked": "Booked",
+    "types": {
+      "internal": "Internal",
+      "window": "Sea View",
+      "balcony": "Balcony",
+      "suite": "Suite"
+    }
+  },
+  "logistics": {
+    "title": "Logistics",
+    "subtitle": "Terminal routes & info",
+    "toTerminal": "To Terminal",
+    "fromTerminal": "From Terminal",
+    "checkin": "Check-in",
+    "boarding": "Boarding starts",
+    "whatToBring": "What to bring",
+    "rules": "Rules",
+    "routeOptions": "Route options"
+  },
+  "onboarding": {
+    "welcome": "Welcome aboard!",
+    "tzPrompt": "Set your home timezone so we can show you both ship time and your local time.",
+    "homeTimezone": "Your home timezone",
+    "continue": "Continue"
+  },
+  "quickActions": {
+    "boarding": "Boarding",
+    "shipMap": "Ship map",
+    "schedule": "Schedule",
+    "club": "Club"
+  }
+}

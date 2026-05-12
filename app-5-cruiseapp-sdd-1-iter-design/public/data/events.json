@@ -1,0 +1,112 @@
+[
+  {
+    "id": "e1",
+    "title": "Morning Yoga on Deck",
+    "time": "07:00",
+    "endTime": "07:45",
+    "category": "spa",
+    "location": "Sun Deck (Deck 10)",
+    "description": "Start your day with a relaxing yoga session overlooking the sea."
+  },
+  {
+    "id": "e2",
+    "title": "Breakfast Buffet",
+    "time": "07:30",
+    "endTime": "10:00",
+    "category": "food",
+    "location": "Buffet Marina (Deck 7)",
+    "description": "Full breakfast buffet with local and international cuisine."
+  },
+  {
+    "id": "e3",
+    "title": "Kids Club: Pirate Adventure",
+    "time": "09:00",
+    "endTime": "11:00",
+    "category": "family",
+    "location": "Kids Zone (Deck 5)",
+    "description": "Treasure hunts and pirate-themed games for children 4-12."
+  },
+  {
+    "id": "e4",
+    "title": "Tax-Free Shopping Opens",
+    "time": "10:00",
+    "endTime": "22:00",
+    "category": "shops",
+    "location": "Promenade (Deck 6)",
+    "description": "Browse perfumes, chocolates, fashion and electronics at tax-free prices."
+  },
+  {
+    "id": "e5",
+    "title": "Live Jazz Trio",
+    "time": "11:00",
+    "endTime": "12:30",
+    "category": "music",
+    "location": "Sea Pub (Deck 6)",
+    "description": "Smooth jazz standards performed live.",
+    "isRecommended": true
+  },
+  {
+    "id": "e6",
+    "title": "Lunch Buffet",
+    "time": "12:00",
+    "endTime": "14:30",
+    "category": "food",
+    "location": "Buffet Marina (Deck 7)",
+    "description": "Extensive lunch buffet with Nordic specialties."
+  },
+  {
+    "id": "e7",
+    "title": "Sauna & Pool",
+    "time": "13:00",
+    "endTime": "20:00",
+    "category": "spa",
+    "location": "Spa Atlantis (Deck 8)",
+    "description": "Relax in the Finnish sauna, jacuzzi, and indoor pool."
+  },
+  {
+    "id": "e8",
+    "title": "Family Bingo",
+    "time": "14:00",
+    "endTime": "15:00",
+    "category": "family",
+    "location": "Starlight Lounge (Deck 7)",
+    "description": "Win prizes in our family-friendly bingo tournament."
+  },
+  {
+    "id": "e9",
+    "title": "Acoustic Guitar Session",
+    "time": "16:00",
+    "endTime": "17:30",
+    "category": "music",
+    "location": "Coffee & Co (Deck 6)",
+    "description": "Relaxed acoustic set with popular covers."
+  },
+  {
+    "id": "e10",
+    "title": "Captain's Dinner",
+    "time": "19:00",
+    "endTime": "21:00",
+    "category": "food",
+    "location": "Restaurant Atlantica (Deck 7)",
+    "description": "Formal five-course dinner with the Captain.",
+    "isRecommended": true
+  },
+  {
+    "id": "e11",
+    "title": "Evening Cabaret Show",
+    "time": "21:00",
+    "endTime": "22:30",
+    "category": "show",
+    "location": "Grand Theatre (Deck 5)",
+    "description": "Spectacular song-and-dance revue with international artists."
+  },
+  {
+    "id": "e12",
+    "title": "DJ Night",
+    "time": "22:30",
+    "endTime": "02:00",
+    "category": "music",
+    "location": "Starlight Bar (Deck 9)",
+    "description": "Dance the night away with our resident DJ."
+  }
+]

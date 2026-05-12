@@ -1,0 +1,56 @@
+[
+  {
+    "id": "j1",
+    "time": "06:45",
+    "timezone": "CET",
+    "mode": "plane",
+    "title": "Arrive Berlin BER",
+    "detail": "Flight SK1234 landed",
+    "status": "done"
+  },
+  {
+    "id": "j2",
+    "time": "08:00",
+    "timezone": "CET",
+    "mode": "bed",
+    "title": "Hotel Scandic checkout",
+    "detail": "Friedrichstrasse 55",
+    "status": "done"
+  },
+  {
+    "id": "j3",
+    "time": "08:30",
+    "timezone": "CET",
+    "mode": "tram",
+    "title": "Tram to West Harbour",
+    "detail": "Line 6, 25 min",
+    "status": "done"
+  },
+  {
+    "id": "j4",
+    "time": "10:30",
+    "timezone": "EET",
+    "mode": "ship",
+    "title": "Ferry Helsinki → Tallinn",
+    "detail": "MS Silja Serenade · Cabin 8217",
+    "status": "active"
+  },
+  {
+    "id": "j5",
+    "time": "12:30",
+    "timezone": "EET",
+    "mode": "walk",
+    "title": "Walk to Hotel Viru",
+    "detail": "850 m, ~10 min",
+    "status": "upcoming"
+  },
+  {
+    "id": "j6",
+    "time": "14:00",
+    "timezone": "EET",
+    "mode": "bed",
+    "title": "Hotel Viru check-in",
+    "detail": "Viru väljak 4, Tallinn",
+    "status": "upcoming"
+  }
+]

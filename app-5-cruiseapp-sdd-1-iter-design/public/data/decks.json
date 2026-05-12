@@ -1,0 +1,49 @@
+[
+  {
+    "id": "deck-4",
+    "number": 4,
+    "name": "Atlantic",
+    "cabins": [
+      { "id": "c401", "number": "4001", "type": "internal", "deckId": "deck-4", "price": 89, "available": true, "size": "12 m²", "description": "Cozy interior cabin with two lower beds." },
+      { "id": "c402", "number": "4002", "type": "internal", "deckId": "deck-4", "price": 89, "available": true, "size": "12 m²", "description": "Cozy interior cabin with two lower beds." },
+      { "id": "c403", "number": "4003", "type": "internal", "deckId": "deck-4", "price": 95, "available": false, "size": "14 m²", "description": "Interior cabin with one double bed." },
+      { "id": "c404", "number": "4004", "type": "window", "deckId": "deck-4", "price": 129, "available": true, "size": "15 m²", "description": "Sea-view cabin with a porthole window." },
+      { "id": "c405", "number": "4005", "type": "window", "deckId": "deck-4", "price": 129, "available": true, "size": "15 m²", "description": "Sea-view cabin with a porthole window." }
+    ]
+  },
+  {
+    "id": "deck-5",
+    "number": 5,
+    "name": "Baltic",
+    "cabins": [
+      { "id": "c501", "number": "5001", "type": "internal", "deckId": "deck-5", "price": 95, "available": true, "size": "13 m²", "description": "Interior cabin near the entertainment area." },
+      { "id": "c502", "number": "5002", "type": "window", "deckId": "deck-5", "price": 139, "available": true, "size": "16 m²", "description": "Large sea-view cabin with two beds." },
+      { "id": "c503", "number": "5003", "type": "window", "deckId": "deck-5", "price": 135, "available": false, "size": "15 m²", "description": "Sea-view cabin with a double bed." },
+      { "id": "c504", "number": "5004", "type": "balcony", "deckId": "deck-5", "price": 189, "available": true, "size": "20 m²", "description": "Spacious cabin with a private balcony." },
+      { "id": "c505", "number": "5005", "type": "balcony", "deckId": "deck-5", "price": 195, "available": true, "size": "22 m²", "description": "Premium balcony cabin with lounge area." }
+    ]
+  },
+  {
+    "id": "deck-6",
+    "number": 6,
+    "name": "Promenade",
+    "cabins": [
+      { "id": "c601", "number": "6001", "type": "window", "deckId": "deck-6", "price": 145, "available": true, "size": "16 m²", "description": "Promenade-level sea-view cabin." },
+      { "id": "c602", "number": "6002", "type": "balcony", "deckId": "deck-6", "price": 199, "available": true, "size": "22 m²", "description": "Balcony cabin with promenade views." },
+      { "id": "c603", "number": "6003", "type": "balcony", "deckId": "deck-6", "price": 205, "available": false, "size": "24 m²", "description": "Large balcony cabin." },
+      { "id": "c604", "number": "6004", "type": "suite", "deckId": "deck-6", "price": 349, "available": true, "size": "38 m²", "description": "Luxury suite with separate living area and panoramic windows." },
+      { "id": "c605", "number": "6005", "type": "suite", "deckId": "deck-6", "price": 449, "available": true, "size": "52 m²", "description": "Grand suite with jacuzzi, balcony and butler service." }
+    ]
+  },
+  {
+    "id": "deck-7",
+    "number": 7,
+    "name": "Marina",
+    "cabins": [
+      { "id": "c701", "number": "7001", "type": "internal", "deckId": "deck-7", "price": 99, "available": true, "size": "14 m²", "description": "Comfortable interior cabin near dining." },
+      { "id": "c702", "number": "7002", "type": "window", "deckId": "deck-7", "price": 149, "available": true, "size": "17 m²", "description": "Sea-view cabin with extra storage." },
+      { "id": "c703", "number": "7003", "type": "balcony", "deckId": "deck-7", "price": 209, "available": true, "size": "23 m²", "description": "Balcony cabin with panoramic sea views." },
+      { "id": "c704", "number": "7004", "type": "suite", "deckId": "deck-7", "price": 379, "available": false, "size": "42 m²", "description": "Premium suite with living room and dining area." }
+    ]
+  }
+]

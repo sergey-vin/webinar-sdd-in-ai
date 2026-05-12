@@ -1,0 +1,100 @@
+{
+  "tabs": {
+    "trip": "Рейс",
+    "schedule": "Расписание",
+    "map": "Карта",
+    "booking": "Каюты",
+    "logistics": "Логистика"
+  },
+  "home": {
+    "title": "Рейс",
+    "dayOf": "День {day} из {total}",
+    "yourJourney": "Ваш маршрут",
+    "viewAll": "Все",
+    "whileAboard": "На борту",
+    "seeAll": "Все",
+    "shipTime": "Время корабля",
+    "eta": "Прибытие",
+    "speed": "Скорость",
+    "wind": "Ветер",
+    "sea": "Море"
+  },
+  "schedule": {
+    "title": "Расписание",
+    "today": "Сегодня · Время корабля",
+    "mySchedule": "Моё расписание",
+    "events": "событий",
+    "event": "событие",
+    "noEvents": "Нет событий в этой категории.",
+    "yourEvents": "Ваши события",
+    "noEventsYet": "Пока нет событий",
+    "addPrompt": "Перейдите в расписание и нажмите +, чтобы добавить события.",
+    "allEvents": "Все события",
+    "categories": {
+      "all": "Все",
+      "music": "Музыка",
+      "food": "Еда и бары",
+      "family": "Семья",
+      "shops": "Магазины",
+      "spa": "Спа",
+      "show": "Шоу"
+    }
+  },
+  "map": {
+    "title": "Карта корабля",
+    "deck": "Палуба",
+    "searchPlaceholder": "Поиск по названию...",
+    "getMe": "Проведите меня",
+    "venues": "заведений",
+    "shops": "магазинов"
+  },
+  "booking": {
+    "title": "Бронирование",
+    "selectCabin": "Выберите каюту",
+    "reviewSelection": "Проверьте ваш выбор",
+    "availableOn": "Доступно на палубе {number}",
+    "cabin": "Каюта",
+    "type": "Тип",
+    "size": "Размер",
+    "description": "Описание",
+    "pricePerNight": "Цена за ночь",
+    "sendRequest": "Отправить запрос",
+    "requestSent": "Запрос отправлен!",
+    "requestConfirm": "Ваш запрос на каюту {number} отправлен. Мы подтвердим бронирование в ближайшее время.",
+    "backToCabins": "К каютам",
+    "back": "Назад",
+    "from": "от",
+    "available": "доступно",
+    "soldOut": "Распродано",
+    "booked": "Забронировано",
+    "types": {
+      "internal": "Внутренняя",
+      "window": "С окном",
+      "balcony": "С балконом",
+      "suite": "Люкс"
+    }
+  },
+  "logistics": {
+    "title": "Логистика",
+    "subtitle": "Маршруты до терминала",
+    "toTerminal": "До терминала",
+    "fromTerminal": "От терминала",
+    "checkin": "Регистрация",
+    "boarding": "Начало посадки",
+    "whatToBring": "Что взять с собой",
+    "rules": "Правила",
+    "routeOptions": "Варианты маршрута"
+  },
+  "onboarding": {
+    "welcome": "Добро пожаловать!",
+    "tzPrompt": "Укажите домашний часовой пояс, чтобы видеть время корабля и ваше местное время.",
+    "homeTimezone": "Ваш часовой пояс",
+    "continue": "Продолжить"
+  },
+  "quickActions": {
+    "boarding": "Посадка",
+    "shipMap": "Карта",
+    "schedule": "Расписание",
+    "club": "Клуб"
+  }
+}

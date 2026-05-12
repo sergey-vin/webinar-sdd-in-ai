@@ -1,0 +1,18 @@
+{
+  "shipName": "MS Silja Serenade",
+  "currentLocation": "At sea · Gulf of Finland",
+  "shipTime": "14:32",
+  "timezone": "UTC+3",
+  "departurePort": "Helsinki",
+  "departureTime": "10:30",
+  "arrivalPort": "Tallinn",
+  "arrivalTime": "12:30",
+  "progress": 62,
+  "eta": "49 min",
+  "speed": "22.4 kn",
+  "wind": "SW 6 m/s",
+  "seaState": "Calm",
+  "dayOfTrip": 2,
+  "totalDays": 5,
+  "route": "Berlin → Helsinki → Tallinn"
+}

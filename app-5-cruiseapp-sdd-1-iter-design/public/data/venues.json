@@ -1,0 +1,45 @@
+[
+  {
+    "id": "v1",
+    "title": "Sea Pub",
+    "location": "Deck 6",
+    "icon": "music",
+    "time": "Live now",
+    "isActive": true
+  },
+  {
+    "id": "v2",
+    "title": "Coffee & Co",
+    "location": "Deck 6",
+    "icon": "coffee",
+    "isActive": true
+  },
+  {
+    "id": "v3",
+    "title": "Spa & Sauna",
+    "location": "Deck 8",
+    "icon": "spa",
+    "time": "Open until 20:00"
+  },
+  {
+    "id": "v4",
+    "title": "Starlight Bar",
+    "location": "Deck 9",
+    "icon": "wine",
+    "time": "Opens at 18:00"
+  },
+  {
+    "id": "v5",
+    "title": "Buffet Marina",
+    "location": "Deck 7",
+    "icon": "utensils",
+    "time": "Lunch 12:00–14:30"
+  },
+  {
+    "id": "v6",
+    "title": "Grand Theatre",
+    "location": "Deck 5",
+    "icon": "theater",
+    "time": "Show at 21:00"
+  }
+]

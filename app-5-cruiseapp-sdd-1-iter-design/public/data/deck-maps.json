@@ -1,0 +1,79 @@
+[
+  {
+    "deckNumber": 4,
+    "name": "Atlantic",
+    "zones": [
+      { "id": "z4-1", "label": "Reception", "type": "service", "x": 20, "y": 40, "w": 60, "h": 30 },
+      { "id": "z4-2", "label": "Cabins 4001–4010", "type": "cabin", "x": 90, "y": 30, "w": 120, "h": 50 },
+      { "id": "z4-3", "label": "Cabins 4011–4020", "type": "cabin", "x": 220, "y": 30, "w": 120, "h": 50 },
+      { "id": "z4-4", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 5,
+    "name": "Baltic",
+    "zones": [
+      { "id": "z5-1", "label": "Grand Theatre", "type": "entertainment", "x": 20, "y": 30, "w": 80, "h": 50 },
+      { "id": "z5-2", "label": "Kids Zone", "type": "family", "x": 110, "y": 30, "w": 60, "h": 40 },
+      { "id": "z5-3", "label": "Cabins 5001–5010", "type": "cabin", "x": 180, "y": 30, "w": 100, "h": 50 },
+      { "id": "z5-4", "label": "Cabins 5011–5020", "type": "cabin", "x": 290, "y": 30, "w": 60, "h": 50 },
+      { "id": "z5-5", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 6,
+    "name": "Promenade",
+    "zones": [
+      { "id": "z6-1", "label": "Sea Pub", "type": "bar", "x": 20, "y": 30, "w": 70, "h": 40, "highlight": true },
+      { "id": "z6-2", "label": "Coffee & Co", "type": "cafe", "x": 100, "y": 30, "w": 55, "h": 40 },
+      { "id": "z6-3", "label": "Tax-Free Shop", "type": "shop", "x": 165, "y": 30, "w": 70, "h": 40 },
+      { "id": "z6-4", "label": "Promenade Lounge", "type": "lounge", "x": 245, "y": 30, "w": 70, "h": 40, "youAreHere": true },
+      { "id": "z6-5", "label": "Cabins 6001–6005", "type": "cabin", "x": 245, "y": 75, "w": 70, "h": 30 },
+      { "id": "z6-6", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 7,
+    "name": "Marina",
+    "zones": [
+      { "id": "z7-1", "label": "Buffet Marina", "type": "restaurant", "x": 20, "y": 25, "w": 100, "h": 50, "highlight": true },
+      { "id": "z7-2", "label": "Restaurant Atlantica", "type": "restaurant", "x": 130, "y": 25, "w": 80, "h": 50 },
+      { "id": "z7-3", "label": "Starlight Lounge", "type": "lounge", "x": 220, "y": 25, "w": 70, "h": 50 },
+      { "id": "z7-4", "label": "Cabins 7001–7004", "type": "cabin", "x": 300, "y": 25, "w": 50, "h": 50 },
+      { "id": "z7-5", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 8,
+    "name": "Horizon",
+    "zones": [
+      { "id": "z8-1", "label": "Spa Atlantis", "type": "spa", "x": 20, "y": 25, "w": 90, "h": 50 },
+      { "id": "z8-2", "label": "Indoor Pool", "type": "pool", "x": 120, "y": 25, "w": 70, "h": 50 },
+      { "id": "z8-3", "label": "Sauna", "type": "spa", "x": 200, "y": 25, "w": 50, "h": 40 },
+      { "id": "z8-4", "label": "Fitness Center", "type": "fitness", "x": 260, "y": 25, "w": 70, "h": 40 },
+      { "id": "z8-5", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 9,
+    "name": "Sky",
+    "zones": [
+      { "id": "z9-1", "label": "Starlight Bar", "type": "bar", "x": 20, "y": 30, "w": 80, "h": 45 },
+      { "id": "z9-2", "label": "Casino", "type": "entertainment", "x": 110, "y": 30, "w": 70, "h": 45 },
+      { "id": "z9-3", "label": "Nightclub", "type": "entertainment", "x": 190, "y": 30, "w": 70, "h": 45 },
+      { "id": "z9-4", "label": "VIP Lounge", "type": "lounge", "x": 270, "y": 30, "w": 60, "h": 45 },
+      { "id": "z9-5", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  },
+  {
+    "deckNumber": 10,
+    "name": "Sun",
+    "zones": [
+      { "id": "z10-1", "label": "Sun Deck", "type": "outdoor", "x": 20, "y": 20, "w": 150, "h": 50 },
+      { "id": "z10-2", "label": "Outdoor Pool", "type": "pool", "x": 180, "y": 20, "w": 70, "h": 50 },
+      { "id": "z10-3", "label": "Pool Bar", "type": "bar", "x": 260, "y": 20, "w": 60, "h": 40 },
+      { "id": "z10-4", "label": "Sports Court", "type": "fitness", "x": 260, "y": 65, "w": 60, "h": 35 },
+      { "id": "z10-5", "label": "Stairs / Lift", "type": "stairs", "x": 160, "y": 85, "w": 30, "h": 25 }
+    ]
+  }
+]
