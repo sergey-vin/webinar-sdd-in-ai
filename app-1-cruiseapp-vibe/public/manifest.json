@@ -1,0 +1,21 @@
+{
+  "name": "CruiseVibe",
+  "short_name": "CruiseVibe",
+  "description": "Book cruises, navigate the ship, and plan your journey",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0369a1",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
