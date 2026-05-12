@@ -1,0 +1,86 @@
+я начал создавать спеки для Spec-Driven-Development для нового проекта. первая итерация лежит в sdd/specs/*.
+
+я уже попросил Claude Design сделать дизайн проекта. его не обязательно реализовывать as-is, но можешь оттуда черпать идеи.
+дизайн лежит в ~/ws/webinar-demos/design папке.
+
+high-level idea:
+"""
+есть идея для проекта, который я бы хотел чтобы ты сделал. мобильное приложение или responsive web app. это что-то вроде букинг.ком для бронирования круиза на корабле, но еще и с внутренней навигацией по кораблю и расписание увеселений, с подкруткой часов (ведь на корабле меняется время когда он пересекает часовые пояса, ну или люди с разных мест зашли и у них часы на разное время настроены), а так же с планированием маршрута до терминала и после терминала - парковка машины, такси, транспорт и т.п.
+"""
+
+как я это описал в Claude Design:
+"""
+i'd like to build an app for ferries and cruise ships, but maybe also for airports, for in-city sightseeing/museums/etc + navigation. currently there's a problem with all those apps - that they require those apps. i want to have a single one, accessible both as mobile app and as a website for people to easily manage their stay (where's my room, how to read the ticket, how to navigate to the restaurant, what's the schedule of entertainment events (in all timezones - as the ship may be changing TZs as it travels), have easy access to "club card QR", etc.), as well as the booking process (one-way vs roundtrip, etc. - across all carriers, not just 1 - some sort of aggregator similar to skyscanner or ferryscanner, but better if it offers a full experience - e.g. I now a friend's place in Stockholm, but Stockholm has many ports and I have no idea which ferry gets to which port and which plane goes to which airport and how to navigate in-city - bus/tram/walk/taxi/subway - so I'd like to plan a route that shows the closest route and all hops - same as google maps, but better, since Maps doesn't know about all ferries - it only shows first 2 or 3).
+"""
++ I attached screenshots of modern similar apps from app store, and their bad reviews.
+
+here's the full convo with Claude Design after initial prompt:
+"""
+**Claude**
+I'll design an original travel companion app — a unified booking aggregator + on-trip companion that works across ferries, flights, city transit, and sightseeing passes. Before I start building, let me ask some focused questions so I build the right thing.
+
+A note on the brief: I won't recreate Tallink Silja, Viking, Eckerö, Tallinn Card, or Oslo Pass UIs — I'll use them as inspiration for what's missing (English-only support, broken bookings, can't share passes, fragmented apps) and design something original that addresses those gaps.
+
+**You**
+Questions answered:
+- product_name: CUThere
+- primary_focus: On-trip companion (boarding pass, cabin, schedule, map of ship)
+- scenario: Multi-leg: Berlin → Helsinki (flight) → Tallinn (ferry) → city navigation
+- screens_priority: Trip overview / itinerary timeline, Ship deck map / wayfinding, Search & compare (multi-carrier aggregator results), Full route planner (door-to-door, including city transit), Account/profile, Offline mode indicator, Loyalty/club card, Onboard schedule (events, restaurants, with TZ awareness)
+- platform: Web responsive view too
+- aesthetic: Decide for me
+- key_innovation: Auto-TZ-adjusted schedules (ship time vs local time), Multi-language by default (fixes the Viking/Tallink complaints), Works offline at sea (downloadable trip pack), Live ship position + ETA at next port, Cross-carrier booking in one cart, Decide for me
+- tweaks_wanted: Color theme / accent, User persona (solo traveler / family / business / cruise guest)
+- presentation: Decide for me
+
+**Claude**
+Great — clear direction. Let me lay out my approach, then build.
+Plan:
+
+Name: CUThere
+Aesthetic: Calm & nautical, but modern — deep ink-navy, warm off-white, single coral accent. Inter for UI, Fraktion-ish mono for codes/times. Soft, generous whitespace, transit-app clarity.
+Presentation: Design canvas with the key on-trip screens laid out, plus one focused full-bleed interactive prototype where you can navigate between screens. Both, since you said "decide for me."
+Hero scenario: Berlin → Helsinki → Tallinn, currently mid-ferry crossing the Gulf of Finland, then arriving in Tallinn for city navigation.
+Platform: Mobile-first web view (responsive frame, not iOS chrome — since you said web responsive too).
+Tweaks: Color accent + persona switcher (solo / family / business / cruise).
+
+... (after building) ...
+
+Built CUThere — a unified travel companion centered on your Berlin → Helsinki → Tallinn scenario, currently mid-ferry on the Gulf of Finland.
+
+What's in it (9 screens, presented on a design canvas):
+
+Hero on-trip flow:
+
+Trip timeline — live ship progress, ETA, sea conditions, multi-leg journey with mode icons, offline-pack status
+Boarding pass — ferry ticket with QR, "how to use this ticket" steps
+Schedule — TZ switcher (Ship time / Tallinn / Berlin) — your distinguishing feature; events shift live
+Ship deck map — deck switcher (10→4), "you are here" pulse, "get me to…" wayfinding
+Club card — embossed loyalty card, tier progress, perks
+Planning:
+
+Search & compare — Tallink, Eckerö, Viking, Finnair side-by-side; cheapest/fastest badges; CO₂
+Route planner — door-to-door (walk → tram → walk) with map, alternatives
+Profile — docs, prefs, offline pack management
+Plus: Web responsive view (sidebar + dashboard layout) showing the same product in browser.
+
+Interactive prototype — first artboard, tap tab bar / quick actions to navigate between screens.
+
+Tweaks: persona switcher (solo / family / business / cruise) + accent + brand color swatches.
+
+Tradeoffs: I focused hard on the on-trip side per your priority. Cabin key, AR wayfinding, and family/group accounts aren't in this pass — happy to add. The web view is one screen for demo; full responsive treatment could come next.
+"""
+
+я не уверен, что я правильно указал требования/спеки, и хотел бы их уточнить. я уже вижу расхождения между тем, что было в Claude Design, и тем, что лежит в спеках.
+теперь можешь задать мне вопросы, чтобы уточнить спорные моменты, детали реализации, non-negotiables, goals, non-goals, план, стек, архитектуру.
+
+Приложение будет большое, поэтому я хочу нормально его спланировать. 
+
+
+Так же я хочу сделать так, чтобы ты выработал основные правила, которым ты будешь следовать и записал их в CLAUDE.md / AGENTS.md (и если вдруг create-next-app их перезапишет - ты бы их вернул).
+
+Еще я хочу, чтобы ты был как можно более автономным и писал бы тесты на playwrite, чтобы сам мог проверять результаты работы. 
+Каждый milestone - должен быть зафиксирован как git commit, если ты сделал какие-то изменения в архитектуре или реализовал новые компоненты или шаблоны - описал бы их в spec или архитектурных файлах.
+Любое изменение, которое ты делаешь (большие мазки) - логируй в plan/tasks.md или plan/logs.txt или в иной похожей системе трекинга задач in-repo.
+Идея - чтобы пережить полный крах агента, и иметь возможность продолжить с точки остановки и выдать консистентный код тому, что был написан ранее.
+Если возникают дополнительные вопросы в процессе выполнения и ты сам можешь решить - записывай решения в лог/трекинг. Если они спорные (противоречат требованиям/спекам/ранним решениям и т.п.) и требуют моего решения - опять же логируий и дай мне знать.

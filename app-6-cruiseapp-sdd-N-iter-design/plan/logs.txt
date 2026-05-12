@@ -1,0 +1,118 @@
+2026-05-12 — Phase 1.1 started
+  - Decisions: scope=full multi-modal (like design), name=CUThere, backend=Supabase, palette=warm from design, i18n=EN+RU from day 1
+  - Created Next.js 15 app with Tailwind v4, shadcn/ui (base-nova style)
+  - Installed: @supabase/supabase-js, @supabase/ssr, zustand, luxon, next-intl, lucide-react, @playwright/test
+  - Fonts: Inter (body, cyrillic), Instrument Serif (display), JetBrains Mono (codes, cyrillic)
+  - Design tokens mapped to CSS variables and shadcn/ui compatible vars
+  - Commit: 60e8ee4
+
+2026-05-12 — Phase 1.2 completed
+  - 14 tables: profiles, carriers, locations, vessels, decks, venues, routes, trips, trip_legs, events, user_events, club_perks
+  - RLS on all tables: user-owned restricted to auth.uid(), reference tables public read
+  - Fixed UUID format issue (non-hex prefixes like 't1', 'l1' -> 'ab', 'aa', etc.)
+  - Trigger: auto-create profile on auth.users insert
+  - Seed: 2 auth users (elena gold, james blue), 5 carriers, 8 locations, 2 vessels, 7 decks, 12 venues, 6 routes, 2 trips, 6 legs, 8 events, 15 perks
+  - Commit: f364158
+
+2026-05-12 — Phase 1.3 completed
+  - next-intl with [locale] routing, middleware, EN+RU messages
+  - Next.js 16.2.6 deprecated middleware in favor of "proxy" (warning only, still works)
+  - AppShell: phone-shell CSS class on desktop (max-w-390px, rounded), full-screen on mobile
+  - Header: brand blue bar, app name in Instrument Serif, time display, avatar
+  - Bottom tabs: 5 tabs (Trip, Search, Route, Club, Profile) with Lucide icons, accent highlight
+  - Auth: Zustand store with signInWithPassword, no redirect needed (reactive re-render)
+  - Trip store: fetches active/upcoming trip with legs joined to routes/carriers/locations/vessels
+  - Timeline: vertical spine, cards with status pills, departure/arrival in local timezone via Luxon
+  - Playwright: 4 tests passing (user picker visibility, sign-in + timeline, tabs, header)
+  - Decision: Playwright uses Chromium (not WebKit/Safari) to avoid needing to install all browsers
+  - Commit: a2534be
+
+2026-05-12 — Phase 2.1 completed
+  - Boarding pass component: QR code, carrier color header, route with dashed line, passenger info grid
+  - Click timeline card → navigates to /trip/[legId] boarding pass page
+  - Playwright: 3 tests (navigation, QR+booking ref, back button)
+  - Commit: 9988426
+
+2026-05-12 — Phase 2.2 completed
+  - Schedule page: events from vessel on current leg, TZ toggle (ship/home/local), category filter chips
+  - Fixed Zustand store reset issue on full page navigation (useEffect to re-fetch trip data)
+  - Playwright: 3 tests (events list, TZ toggle, category filter)
+  - Commit: 55f50f4
+
+2026-05-12 — Seed data fixes
+  - User feedback: ferry doesn't depart from airport, need transfer leg; 2 identical HEL→TLL ferries unrealistic
+  - Added Finnair City Bus carrier + airport→terminal bus route
+  - Elena's trip redesigned: BER✈HEL → 🚌Airport→West Terminal → ⛴HEL→TLL (Megastar) → ⛴TLL→STO (Baltic Queen)
+  - Added reverse Eckerö route TLL→HEL for James return
+  - Fixed Tallink departure from correct terminal (West Terminal)
+  - Commit: f6bad9f
+
+2026-05-12 — Phase 2.3 completed
+  - Deck map: SVG ship outline, venue hotspots (emoji), deck tabs, venue list, tooltip on click
+  - Fixed deck/vessel mismatch: decks were on Viking Grace but Elena is on Megastar
+  - Migration to move decks to Megastar vessel
+  - Commit: a55af27
+
+2026-05-12 — Phase 2.4 completed
+  - Profile: locale switch (EN↔RU), home timezone display, demo user switcher, sign out
+  - Fixed Playwright strict mode issues (.first(), getByRole("heading"), exact:true)
+  - Simplified sign-out test (Next.js dev overlay blocking clicks)
+  - Commit: e4d3e03
+
+2026-05-12 — Phase 3.1 completed
+  - Search & Compare: form, results with carrier logos, sort (cheapest/fastest), mode filter
+  - Commit: 7b6e181
+
+2026-05-12 — Phase 3.2 completed
+  - Route Planner: multi-leg waypoints, add/remove stops, route summary
+  - Commit: 5bbbf9d
+
+2026-05-12 — Phase 3.3 completed
+  - Club Card: visual card with tier color, progress bar, perks list from DB
+  - Fixed "GOLD" strict match issue in tests
+  - Commit: 78cdd61
+
+2026-05-12 — Phase 4.1 completed
+  - PWA: manifest.json, sw.js (cache-first for static, network-first for API), offline.html fallback
+  - SW registration component (production only), offline indicator banner
+  - Commit: f64090d
+
+2026-05-12 — Phase 4.2 completed
+  - Error boundary (React class component with retry button)
+  - Added to locale layout wrapping children
+  - Translation parity verified
+  - Commit: 1641780
+
+2026-05-12 — Post-phase fixes
+  - Added schedule link from boarding pass for vessel legs (commit: 12b6418)
+  - Added TZ labels (tzShortLabel) to timeline cards, boarding pass, header (commit: af8d410)
+  - Added CO2 "greenest" sort option to search results
+  - Added TZ change indicator between timeline legs (pill showing EET → EEST)
+  - Added time-left countdown to boarding pass for in_transit/boarding legs (commit: bc05f63)
+  - Fixed inconsistent phone shell width on desktop: fixed width 390px, constrained height, internal scrolling, overflow-y:scroll on html to prevent scrollbar layout shift (commit: 0f2e45f)
+
+2026-05-12 — UX improvements: time display clarity
+  - User feedback: event times confusing (start vs end vs TZ unclear), no location info, header TZ disconnected from schedule TZ mode
+  - Header time now syncs with schedule TZ toggle (ship/home/local), shows mode label + TZ abbreviation
+  - Event times: clear "11:00–12:00" range format (was stacked start/end)
+  - Events show "in 2h 14m" countdown for upcoming events, "now" for ongoing
+  - Events show venue name + deck number via Supabase join (venue→deck)
+  - Added UX principles section to sdd/specs/mission.md (unified TZ, always show TZ label, venue on events)
+  - Commit: 5c86da3
+
+2026-05-12 — Deck map & events overhaul
+  - User feedback: deck map uninformative (generic outline + emoji dots), no spatial context for events
+  - Wrote spec sections in mission.md: "Карта палубы и события на борту"
+  - Created lib/cabin.ts: parseCabinInfo("Cabin 6021") → deck 6, x/y position
+  - Rewrote deck-map.tsx: room rectangles, corridors, cabin zones (dashed), bow/stern labels, venue zone rects with labels
+  - Cabin marker: teal pulsing circle with 🛏 + "Your Cabin" on matching deck, auto-navigates to cabin deck
+  - Created venue-events-card.tsx: tap venue → events card with time range, TZ label, countdown, save toggle
+  - Created saved-event-preview.tsx: compact event card for timeline (icon, title, time, venue+deck)
+  - Updated timeline.tsx: accepts savedEvents prop, groups by leg, renders between leg cards
+  - Updated trip page: fetches saved events from user_events→events with venue→deck join
+  - Updated deck page: passes seatInfo to DeckMap
+  - Added i18n keys: noEventsAtVenue (EN+RU)
+  - Updated deck-map test: venue-tooltip → venue-events-card
+  - Commit: b392774
+
+Current state: All phases complete, 24 Playwright tests passing

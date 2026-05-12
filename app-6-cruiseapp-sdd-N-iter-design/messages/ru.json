@@ -1,0 +1,119 @@
+{
+  "common": {
+    "appName": "CUThere",
+    "loading": "Загрузка...",
+    "error": "Что-то пошло не так",
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "back": "Назад",
+    "noData": "Нет данных"
+  },
+  "tabs": {
+    "trip": "Поездка",
+    "search": "Поиск",
+    "route": "Маршрут",
+    "club": "Клуб",
+    "profile": "Профиль"
+  },
+  "trip": {
+    "title": "Ваша поездка",
+    "timeline": "Хронология",
+    "noTrip": "Нет активной поездки",
+    "noTripDesc": "Войдите, чтобы увидеть детали поездки",
+    "day": "День {day}",
+    "leg": "Этап {n}",
+    "boarding": "Посадочный талон",
+    "deckMap": "Карта корабля",
+    "schedule": "Расписание",
+    "clubCard": "Клубная карта",
+    "liveNow": "СЕЙЧАС",
+    "atSea": "В море",
+    "inPort": "В порту",
+    "departureShort": "ОТП",
+    "arrivalShort": "ПРИБ",
+    "duration": "Длительность",
+    "remaining": "осталось",
+    "noEventsAtVenue": "Нет предстоящих событий"
+  },
+  "status": {
+    "scheduled": "Запланировано",
+    "check_in_open": "Регистрация открыта",
+    "boarding": "Посадка",
+    "in_transit": "В пути",
+    "arrived": "Прибыл",
+    "cancelled": "Отменено",
+    "upcoming": "Предстоит",
+    "active": "Активно",
+    "completed": "Завершено"
+  },
+  "modes": {
+    "ferry": "Паром",
+    "flight": "Рейс",
+    "bus": "Автобус",
+    "train": "Поезд",
+    "metro": "Метро",
+    "walk": "Пешком",
+    "taxi": "Такси"
+  },
+  "schedule": {
+    "title": "Расписание",
+    "shipTime": "Время корабля",
+    "homeTime": "Домашнее время",
+    "localTime": "Местное время",
+    "allCategories": "Все",
+    "noEvents": "Нет запланированных событий"
+  },
+  "search": {
+    "title": "Поиск и сравнение",
+    "from": "Откуда",
+    "to": "Куда",
+    "date": "Дата",
+    "passengers": "Пассажиры",
+    "searchBtn": "Искать",
+    "results": "{count} результатов",
+    "cheapest": "Дешевле",
+    "fastest": "Быстрее",
+    "greenest": "CO₂",
+    "noResults": "Маршруты не найдены"
+  },
+  "route": {
+    "title": "Планировщик маршрута",
+    "doorToDoor": "От двери до двери",
+    "totalTime": "Общее время",
+    "alternatives": "Альтернативы"
+  },
+  "club": {
+    "title": "Клубная карта",
+    "tier": "Уровень",
+    "points": "Баллы",
+    "memberSince": "Участник с",
+    "perks": "Ваши привилегии",
+    "nextTier": "Следующий уровень",
+    "tripsToNext": "До следующего уровня: {count} поездок"
+  },
+  "profile": {
+    "title": "Профиль",
+    "switchUser": "Сменить демо-пользователя",
+    "settings": "Настройки",
+    "homeTimezone": "Домашний часовой пояс",
+    "language": "Язык",
+    "docs": "Документы",
+    "signInAs": "Войти как {name}"
+  },
+  "categories": {
+    "show": "Шоу",
+    "dining": "Питание",
+    "excursion": "Экскурсия",
+    "sport": "Спорт",
+    "wellness": "Спа",
+    "kids": "Дети",
+    "music": "Музыка",
+    "other": "Другое"
+  },
+  "auth": {
+    "selectUser": "Выберите демо-пользователя",
+    "signingIn": "Вход..."
+  }
+}

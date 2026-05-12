@@ -1,0 +1,21 @@
+{
+  "name": "CUThere — Multi-Modal Travel Companion",
+  "short_name": "CUThere",
+  "description": "Your door-to-door travel companion for Baltic ferries, flights, and city transit",
+  "start_url": "/en/trip",
+  "display": "standalone",
+  "background_color": "#F4F1EB",
+  "theme_color": "#0B3D5C",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

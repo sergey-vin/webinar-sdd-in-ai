@@ -1,0 +1,119 @@
+{
+  "common": {
+    "appName": "CUThere",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "noData": "No data available"
+  },
+  "tabs": {
+    "trip": "Trip",
+    "search": "Search",
+    "route": "Route",
+    "club": "Club",
+    "profile": "Profile"
+  },
+  "trip": {
+    "title": "Your Trip",
+    "timeline": "Trip Timeline",
+    "noTrip": "No active trip",
+    "noTripDesc": "Sign in to see your trip details",
+    "day": "Day {day}",
+    "leg": "Leg {n}",
+    "boarding": "Boarding Pass",
+    "deckMap": "Ship Map",
+    "schedule": "Schedule",
+    "clubCard": "Club Card",
+    "liveNow": "LIVE",
+    "atSea": "At sea",
+    "inPort": "In port",
+    "departureShort": "DEP",
+    "arrivalShort": "ARR",
+    "duration": "Duration",
+    "remaining": "remaining",
+    "noEventsAtVenue": "No upcoming events at this venue"
+  },
+  "status": {
+    "scheduled": "Scheduled",
+    "check_in_open": "Check-in open",
+    "boarding": "Boarding",
+    "in_transit": "In transit",
+    "arrived": "Arrived",
+    "cancelled": "Cancelled",
+    "upcoming": "Upcoming",
+    "active": "Active",
+    "completed": "Completed"
+  },
+  "modes": {
+    "ferry": "Ferry",
+    "flight": "Flight",
+    "bus": "Bus",
+    "train": "Train",
+    "metro": "Metro",
+    "walk": "Walk",
+    "taxi": "Taxi"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "shipTime": "Ship time",
+    "homeTime": "Home time",
+    "localTime": "Local time",
+    "allCategories": "All",
+    "noEvents": "No events scheduled"
+  },
+  "search": {
+    "title": "Search & Compare",
+    "from": "From",
+    "to": "To",
+    "date": "Date",
+    "passengers": "Passengers",
+    "searchBtn": "Search",
+    "results": "{count} results",
+    "cheapest": "Cheapest",
+    "fastest": "Fastest",
+    "greenest": "CO₂",
+    "noResults": "No routes found"
+  },
+  "route": {
+    "title": "Route Planner",
+    "doorToDoor": "Door-to-door",
+    "totalTime": "Total time",
+    "alternatives": "Alternatives"
+  },
+  "club": {
+    "title": "Club Card",
+    "tier": "Tier",
+    "points": "Points",
+    "memberSince": "Member since",
+    "perks": "Your Perks",
+    "nextTier": "Next tier",
+    "tripsToNext": "{count} trips to next tier"
+  },
+  "profile": {
+    "title": "Profile",
+    "switchUser": "Switch Demo User",
+    "settings": "Settings",
+    "homeTimezone": "Home timezone",
+    "language": "Language",
+    "docs": "Travel Documents",
+    "signInAs": "Sign in as {name}"
+  },
+  "categories": {
+    "show": "Show",
+    "dining": "Dining",
+    "excursion": "Excursion",
+    "sport": "Sport",
+    "wellness": "Wellness",
+    "kids": "Kids",
+    "music": "Music",
+    "other": "Other"
+  },
+  "auth": {
+    "selectUser": "Select a demo user to get started",
+    "signingIn": "Signing in..."
+  }
+}
