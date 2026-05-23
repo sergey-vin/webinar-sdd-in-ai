@@ -2,7 +2,7 @@
 
 ## Instructions for AI Agent
 
-You are extracting an SDD (Spec-Driven Development) framework from an existing codebase that has no specs. The goal is to document **what actually exists** — not what was planned or aspired to.
+You are extracting an SDD (Spec-Driven Development) framework from an existing codebase that has no specs. Read the [Core Principles](../README.md#core-principles) first. The goal is to document **what actually exists** — not what was planned or aspired to.
 
 ## Phase 1: Discover
 
@@ -94,7 +94,7 @@ For patterns that apply across multiple features, create convention docs in `doc
 **Key distinction:**
 - Convention docs describe **how to build here** — patterns, constraints, rules
 - Specs describe **what was/will be built** — feature checklists, decisions, gaps
-- Checklists (`[x]`/`[ ]`) NEVER go in docs/ — they belong in specs/
+- Orphaned checklists (`[x]`/`[ ]`) without a corresponding spec belong in specs/. Exception: `docs/roadmap.md` uses checklists as a navigation index — see [Core Principles](../README.md#core-principles)
 
 ## Phase 6: Build Table → Spec Index
 
@@ -125,7 +125,7 @@ Rules:
 5. **Run parallel exploration agents** for large codebases. One per journey or domain. Merge findings.
 6. **Don't create meta-trackers.** Each feature gets one spec. Don't create "Platform MVP" specs that just link to other specs.
 7. **Investigate before dismissing.** Don't call a table "orphaned" without checking git history — commits, intent, evolution.
-8. **Separate docs/ and specs/.** Checklists go in specs/. Architecture constraints go in docs/. Don't mix them.
+8. **Separate docs/ and specs/.** Orphaned checklists go in specs/. Architecture constraints go in docs/. If a spec contains architecture-like decisions, leave the spec alone and add the convention to docs/ as well. See [Core Principles](../README.md#core-principles).
 
 ## Output Structure
 

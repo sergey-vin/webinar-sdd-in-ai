@@ -2,7 +2,7 @@
 
 ## Instructions for AI Agent
 
-You are creating spec files for a user journey. Each journey gets a directory under `specs/` with up to 3 files:
+You are creating spec files for a user journey. Read the [Core Principles](../README.md#core-principles) first — especially "Specs are sealed records". Each journey gets a directory under `specs/` with up to 3 files:
 
 ```
 specs/{domain}-{feature}/

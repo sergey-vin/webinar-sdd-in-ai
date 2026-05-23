@@ -2,7 +2,7 @@
 
 ## Instructions for AI Agent
 
-You are creating the SDD (Spec-Driven Development) constitution for a project. This consists of 3 files in the `docs/` directory:
+You are creating the SDD (Spec-Driven Development) constitution for a project. Read the [Core Principles](../README.md#core-principles) first. This consists of 3 files in the `docs/` directory:
 
 1. **`mission.md`** — What this project is, who it's for, and why it exists
 2. **`tech-stack.md`** — What technologies are used and how they connect

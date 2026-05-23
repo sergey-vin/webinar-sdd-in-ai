@@ -4,6 +4,8 @@
 
 You are fixing a codebase that has SDD files (docs/ and specs/) but they were created with structural problems. This prompt guides you through identifying and fixing common issues that arise during initial SDD retrofit.
 
+Before making any changes, read the [Core Principles](../README.md#core-principles) — especially "Specs are sealed records", "References flow from docs/ to specs/", and "Don't reorganize for category purity".
+
 ## When to use this
 
 After `03-retrofit-audit.md` has been run and the user has reviewed the output. Common triggers:
@@ -20,22 +22,22 @@ After `03-retrofit-audit.md` has been run and the user has reviewed the output. 
 
 Scan every file in `docs/` for these red flags:
 
-- **Checklists** (`[x]`/`[ ]`) — these belong in specs/, not docs/
-- **Phase trackers** ("Phase 1 done, Phase 2 in progress") — these are roadmap/spec items
+- **Orphaned checklists** (`[x]`/`[ ]`) that have **no corresponding spec** — these need a spec created for them
+- **Phase trackers** ("Phase 1 done, Phase 2 in progress") that **don't link to specs** — these need spec links added
 - **Feature changelogs** ("Added X in commit Y") — these are spec history, not conventions
-- **Planned items** ("TODO: implement Z") — these go in specs/
+- **Planned items** ("TODO: implement Z") that have **no spec tracking them** — these need a spec
 
-For each violation found: extract the spec content into the appropriate `specs/*/plan.md`, keep only the convention/architecture content in docs/.
+**Exception:** A roadmap file in docs/ that uses checklists but links to specs is fine — it's a navigation document, not a spec. Don't move it.
 
-### Check specs/ for docs content
+For each violation found: create or extend the appropriate `specs/*/plan.md` to cover the orphaned content, then replace the docs/ checklist with a link to that spec.
 
-Scan every file in `specs/` for these red flags:
+### Check specs/ for docs content that docs/ is missing
 
-- **Architecture constraints** ("all tables must have tenant_id") — these belong in docs/
-- **Component usage rules** ("use STATUS_COLORS from sessionColors.ts") — these belong in docs/
-- **Data model conventions** ("field is `is_done`, not `completed`") — these belong in docs/
+Scan every file in `specs/` and note any architecture constraints, component usage rules, or data model conventions that **also need to exist in docs/** as living rules. But:
 
-For each violation: extract the convention content into `docs/`, keep only the feature journey in specs/.
+- **Do NOT remove the content from specs/** — specs are sealed.
+- **Do add** the convention to the appropriate docs/ file if it's not already there.
+- **Optionally** add a "See also" link in docs/ pointing to the spec where the decision was originally made.
 
 ## Step 2: Eliminate meta-trackers
 
@@ -166,12 +168,18 @@ Shipped specs stay. They're the permanent record. Convention docs may be extract
 ### Mixing multiple features in one spec
 If a spec covers profile + booking + sessions + calendar, it's too broad. Split into separate specs, one per feature journey.
 
+### Gutting specs to "fix" separation
+Replacing a spec's "Decisions Visible in Code" section with a link to docs/ destroys the sealed record. The correct fix is to ensure docs/ also has the convention — the spec keeps its original content unchanged.
+
+### Moving files for category purity
+Moving `docs/roadmap.md` → `specs/roadmap.md` just because it has checklists creates churn with no value if the roadmap already links to specs. Only move files when the content is genuinely misplaced and the move improves discoverability.
+
 ## Output
 
 After repair, the structure should satisfy:
 
-- [ ] Every `docs/` file contains only conventions, architecture, or constitution — no checklists
-- [ ] Every `specs/` file contains only feature journeys — no architecture constraints
+- [ ] Every `docs/` file contains only conventions, architecture, or constitution — no **orphaned** checklists (roadmap checklists that link to specs are fine)
+- [ ] Every convention visible in specs/ is **also** captured in the appropriate docs/ file (specs stay untouched)
 - [ ] No meta-trackers exist
 - [ ] Roadmap sections link to specs, not phase numbers
 - [ ] Spec folders have domain prefixes where applicable

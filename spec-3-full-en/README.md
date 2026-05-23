@@ -89,6 +89,32 @@ Maintain a mapping in `docs/README.md` of every database table to its spec. This
 3. **Repair** — Run `prompts/05-retrofit-repair.md` to fix structural issues
 4. **Continue** — Use `prompts/02-journey-specs.md` for new features going forward
 
+## Core Principles
+
+### Specs are sealed records
+
+Once a spec is shipped (`[x]`), its content is frozen — it documents what was decided and built at that point in time. Don't rewrite, gut, or "clean up" shipped specs.
+
+- **Never remove content from a spec** to move it elsewhere. The decisions in `requirements.md` were correct at shipping time.
+- **Shipped specs stay forever.** They don't "graduate" to docs/. A fully-shipped spec is still the permanent record.
+- Convention docs (docs/) may be extracted *from* a spec, but the spec itself remains unchanged.
+
+### References flow from docs/ to specs/
+
+Architecture docs (docs/) are living documents that evolve. Specs are frozen. Therefore:
+
+- **docs/ cites specs/**: A living doc may reference a spec as "origin of this pattern" or "see also". Correct — the doc evolves, the spec stays.
+- **specs/ links to docs/**: A spec may link to convention docs for shared patterns at writing time. Fine, but the spec is never updated to chase doc changes.
+- **Never rewrite a spec** to replace its content with a link to docs/. That destroys the sealed record.
+
+### Roadmap lives in docs/
+
+The roadmap (`docs/roadmap.md`) is a **navigation document**, not a spec. It uses checklists (`[x]`/`[ ]`) but links to specs for detail. This is the one place checklists are allowed in docs/ — because it's a table of contents, not a feature tracker. Don't move it to specs/.
+
+### Don't reorganize for category purity
+
+Only move files when the move improves discoverability. Moving `docs/roadmap.md` → `specs/roadmap.md` because "it has checklists" inflates the git diff with no added value. The test: does the move help someone find the file? If not, skip it.
+
 ## Journeys, Not Modules
 
 This is the most important principle. Organize specs around what the **user** does, not how the **code** is structured.
@@ -125,9 +151,13 @@ Don't number phases ("Phase 1", "Phase 2"). Phase boundaries are arbitrary and d
 
 ### Mixing docs/ and specs/
 
-- Checklists (`[x]`/`[ ]`) belong in specs/, not docs/
-- Architecture constraints belong in docs/, not specs/
+- **Orphaned checklists** (`[x]`/`[ ]`) with no corresponding spec belong in specs/. Exception: `docs/roadmap.md` uses checklists as navigation — see [Core Principles](#roadmap-lives-in-docs).
+- Architecture constraints belong in docs/, not specs/. But if a spec also documents them (as decisions made at build time), **leave the spec alone** — add the convention to docs/ as well. See [Core Principles](#specs-are-sealed-records).
 - "What was shipped when" is a spec. "How to build here" is a doc.
+
+### Gutting specs to "fix" separation
+
+Replacing a spec's "Decisions Visible in Code" with a link to docs/ destroys the sealed record. The correct fix: ensure docs/ also has the convention. The spec keeps its original content unchanged.
 
 ### Aspirational schemas
 

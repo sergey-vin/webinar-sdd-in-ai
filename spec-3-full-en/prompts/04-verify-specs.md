@@ -2,7 +2,7 @@
 
 ## Instructions for AI Agent
 
-You are verifying that SDD specs match the actual codebase. Specs drift from reality — features get marked as done when they're not, enum values change, timing logic differs from what's documented.
+You are verifying that SDD specs match the actual codebase. Read the [Core Principles](../README.md#core-principles) first — especially "Specs are sealed records" (fix inaccuracies in place, don't remove decisions from specs). Specs drift from reality — features get marked as done when they're not, enum values change, timing logic differs from what's documented.
 
 ## Process
 
