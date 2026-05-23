@@ -1,38 +1,35 @@
 # Roadmap — {Project Name}
 
-## Completed
+Shipped features are marked `[x]`. Planned items are `[ ]`. Each section links to its spec.
 
-### Phase 1 — {Name}
+---
 
-- [x] Feature 1
-- [x] Feature 2
+## {Product Area 1}
 
-> Docs: [relevant-doc.md](relevant-doc.md)
+### [{Feature Name}](../specs/{domain}-{feature}/plan.md) ({Month Year}) [x]
 
-### Phase 2 — {Name}
+- [x] Shipped item 1
+- [x] Shipped item 2
 
-- [x] Feature 3
-- [x] Feature 4
+### [{Another Feature}](../specs/{domain}-{feature-2}/plan.md) ({Month Year}) [x]
 
-<!-- Add more phases as needed -->
+- [x] Shipped item 3
+- [x] Shipped item 4
 
-## Upcoming
+<!-- Do NOT use "Phase 1", "Phase 2" numbering. -->
+<!-- Use feature names that link to their specs. -->
+<!-- Phase boundaries are arbitrary; feature boundaries are meaningful. -->
 
-### Phase N — {Name} (P1)
+---
 
-- [ ] Planned feature 1
-- [ ] Planned feature 2
+## Planned
 
-### Phase N+1 — {Name} (P2)
+### [{Planned Feature}](../specs/{domain}-{feature-3}/plan.md)
 
-- [ ] Planned feature 3
-
-<!-- Priority tags: P1 = next up, P2 = soon, P3 = later -->
-<!-- Link to detailed docs or specs where relevant -->
+- [ ] Planned item 1
+- [ ] Planned item 2
 
 ## Not Planned
 
 <!-- Features explicitly excluded from the roadmap and why. -->
 <!-- These are conscious decisions, not forgotten items. -->
-<!-- - Web version — mobile-only for the foreseeable future -->
-<!-- - Multi-language UI — single language until user base demands it -->

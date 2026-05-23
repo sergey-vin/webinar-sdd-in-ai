@@ -1,30 +1,8 @@
 # {Journey Name} — Requirements
 
-## User Story
+## Decisions Visible in Code
 
-> As a {persona}, I want to {action} so that {outcome}.
-> As a {other persona}, I want to {action} so that {outcome}.
-
-## Scope
-
-<!-- One paragraph: what's inside this journey's boundary, what's outside. -->
-
-## Non-Goals
-
-<!-- What this journey explicitly does NOT cover, even if users might expect it. -->
-<!-- - No automated refunds — admin handles manually for MVP -->
-<!-- - No multi-currency — single currency only -->
-
-## Implementation Details
-
-<!-- Links to detailed docs — don't duplicate content here -->
-
-- Feature A: [docs/feature-a.md](../docs/feature-a.md)
-- Feature B: [docs/feature-b.md](../docs/feature-b.md)
-
-## Decisions
-
-<!-- Key architectural and product decisions. Capture the "why". -->
+<!-- Key architectural and product decisions. Capture the "why", not just the "what". -->
 
 - **Decision name** — what was decided, why, and what the alternative was
 - **Another decision** — context
@@ -36,8 +14,6 @@
 - Gap description
 - Another gap
 
-## Rejected Alternatives
-
-<!-- What was considered and explicitly rejected, and why -->
-
-- **Alternative** — why it was rejected
+<!-- Convention docs in docs/ describe patterns. Link to them, don't duplicate: -->
+<!-- - Data model conventions: [docs/trainer/README.md](../../docs/trainer/README.md) -->
+<!-- - Session status colors: [docs/trainer/components/sessions-n-availability.md](../../docs/trainer/components/sessions-n-availability.md) -->

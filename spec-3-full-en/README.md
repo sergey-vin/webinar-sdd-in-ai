@@ -1,51 +1,77 @@
 # Spec-Driven Development (SDD)
 
-A lightweight framework for keeping product specs, implementation docs, and code in sync — especially useful when working with AI coding agents.
+A lightweight framework for keeping product specs, convention docs, and code in sync — especially useful when working with AI coding agents.
 
 ## Why
 
 Without specs, AI agents hallucinate features, misunderstand scope, and produce code that doesn't fit. Without code-verified specs, documentation drifts from reality. SDD solves both: specs drive development, code verifies specs.
 
-## Three Layers
+## Two Directories
 
 ```
-docs/                          # Constitution + Implementation docs
+docs/                          # Conventions, architecture, "how to build here"
 ├── mission.md                 #   WHO are the users, WHY does this exist
 ├── tech-stack.md              #   WHAT technologies, HOW they connect
-├── roadmap.md                 #   WHEN — completed phases + upcoming work
-├── auth.md                    #   Detailed implementation reference
-├── payments.md                #   (one per technical domain)
-└── ...
+├── roadmap.md                 #   WHEN — shipped features + upcoming work
+├── README.md                  #   Index + Table → Spec mapping
+├── architecture/              #   Non-negotiable constraints
+│   ├── multi-tenancy.md       #     (one per architectural domain)
+│   └── ...
+├── design-system.md           #   Tokens, typography, component patterns
+└── {domain}/README.md         #   Data model conventions, query patterns
 
-specs/                         # Journey specs (the planning layer)
-├── 2026-01-onboarding/
+specs/                         # Journey specs, "what was/will be built"
+├── {domain}-{feature}/
 │   ├── plan.md                #   Checklist: what's done [x], what's not [ ]
-│   ├── requirements.md        #   User story, scope, decisions, known gaps
+│   ├── requirements.md        #   Scope, decisions, known gaps
 │   └── validation.md          #   Acceptance criteria + QA test scenarios
-├── 2026-02-booking/
+├── {domain}-{feature-2}/
 │   └── ...
 └── ...
 ```
 
-### Layer 1: Constitution (`docs/mission.md`, `tech-stack.md`, `roadmap.md`)
+### docs/ — Conventions & Architecture
 
-The project's identity. Rarely changes. Answers: what is this, who is it for, what tech do we use, what's the plan, and what we deliberately don't do (non-goals).
+The project's identity and rules. Answers: what is this, who is it for, what tech do we use, and how do we build here.
 
-### Layer 2: Journey Specs (`specs/YYYY-MM-feature-name/`)
+**Constitution** (`mission.md`, `tech-stack.md`, `roadmap.md`): rarely changes, defines the project's identity.
+
+**Architecture** (`architecture/*.md`): non-negotiable system constraints — multi-tenancy model, routing, security. "How it works."
+
+**Conventions** (`design-system.md`, `{domain}/README.md`): data model conventions, component patterns, query patterns. "How to build here." These emerge from shipped features when patterns become reusable.
+
+**Key rule:** docs/ describes **constraints and patterns**. It does NOT track what's shipped/planned — that's specs/.
+
+### specs/ — Journey Specs
 
 One directory per **user journey** — not per technical module. A "chat screen" is not a feature; it's a tool used across multiple journeys (negotiation, support, dispute resolution).
 
-Each journey has 3 files:
+Each journey has up to 3 files:
 
-- **plan.md** — Checklist of tasks grouped by high-level goals. `[x]` done, `[ ]` todo.
-- **requirements.md** — User story, scope, non-goals, architectural decisions, known gaps. Links to implementation docs.
-- **validation.md** — Acceptance criteria + detailed QA test scenarios with checkboxes.
+- **plan.md** — Checklist of tasks grouped by high-level goals. `[x]` done, `[ ]` todo. The permanent record of what was built.
+- **requirements.md** — Scope, decisions, known gaps. Links to convention docs.
+- **validation.md** — Acceptance criteria + detailed QA test scenarios.
 
-### Layer 3: Implementation Docs (`docs/*.md`)
+Shipped specs stay as specs — they don't "graduate" to docs/. A fully-shipped spec is still the record of what was built and why. Convention docs may be extracted from it, but the spec remains.
 
-Detailed technical documentation per domain (auth, payments, chat, etc.). These are the reference material — specs link to them, not duplicate them.
+### Domain Prefixes
 
-**Key rule:** Implementation docs describe what **exists**. Specs track what's **planned and missing**.
+Prefix spec folders with their domain to group related features:
+
+```
+specs/
+├── trainer-booking/           # Trainer domain
+├── trainer-availability/
+├── trainer-sessions/
+├── trainer-homework/
+├── user-onboarding/           # Platform-wide (no prefix needed)
+├── billing-payments/
+└── on-account/                # Separate product
+```
+
+### Table → Spec Index
+
+Maintain a mapping in `docs/README.md` of every database table to its spec. This is the integrity check — every table must have at least one spec. Tables without specs are undocumented features. Update this index when adding tables or specs.
 
 ## Workflow
 
@@ -60,7 +86,8 @@ Detailed technical documentation per domain (auth, payments, chat, etc.). These 
 
 1. **Audit** — Run `prompts/03-retrofit-audit.md` to extract SDD from existing code
 2. **Review** — Fix any inaccuracies the audit missed
-3. **Continue** — Use `prompts/02-journey-specs.md` for new features going forward
+3. **Repair** — Run `prompts/05-retrofit-repair.md` to fix structural issues
+4. **Continue** — Use `prompts/02-journey-specs.md` for new features going forward
 
 ## Journeys, Not Modules
 
@@ -86,14 +113,39 @@ specs/review-and-support/         # Rate, report, get help, refund
 
 Chat appears in multiple journeys (negotiation in negotiate-and-pay, support in review-and-support). Payments span negotiate-and-pay (initial charge) and review-and-support (refunds). The journey framing captures this naturally.
 
+## Anti-Patterns
+
+### Meta-trackers
+
+A spec that just links to other specs is not a spec. If "Platform MVP" is just a checklist of "profile done, sessions done, booking done" pointing to their own specs — delete it. Each feature should have exactly one spec.
+
+### Phase numbers in roadmap
+
+Don't number phases ("Phase 1", "Phase 2"). Phase boundaries are arbitrary and don't correspond to features. Link roadmap sections to their specs instead: `### [Booking](../specs/booking/plan.md) (Apr 2026) [x]`.
+
+### Mixing docs/ and specs/
+
+- Checklists (`[x]`/`[ ]`) belong in specs/, not docs/
+- Architecture constraints belong in docs/, not specs/
+- "What was shipped when" is a spec. "How to build here" is a doc.
+
+### Aspirational schemas
+
+A database table with zero application code is not a shipped feature. Don't mark it `[x]`. Document it as planned (`[ ]`) with a note: "schema exists, zero code."
+
+### Orphan dismissal
+
+Don't call a table "orphaned" without checking git history. It may have been created alongside other features, with clear intent. Check the commit that added it, what else was in that commit, and whether it evolved.
+
 ## Prompts
 
-| Prompt                                               | When to use                                           |
-| ---------------------------------------------------- | ----------------------------------------------------- |
-| [01-constitution.md](prompts/01-constitution.md)     | Starting a new project or formalizing an existing one |
-| [02-journey-specs.md](prompts/02-journey-specs.md)   | Adding a new feature/journey                          |
-| [03-retrofit-audit.md](prompts/03-retrofit-audit.md) | Existing codebase with no specs — extract from code   |
-| [04-verify-specs.md](prompts/04-verify-specs.md)     | After implementation — verify specs match reality     |
+| Prompt | When to use |
+|--------|-------------|
+| [01-constitution.md](prompts/01-constitution.md) | Starting a new project or formalizing an existing one |
+| [02-journey-specs.md](prompts/02-journey-specs.md) | Adding a new feature/journey |
+| [03-retrofit-audit.md](prompts/03-retrofit-audit.md) | Existing codebase with no specs — extract from code |
+| [04-verify-specs.md](prompts/04-verify-specs.md) | After implementation — verify specs match reality |
+| [05-retrofit-repair.md](prompts/05-retrofit-repair.md) | Fix broken SDD structure (mixed docs/specs, wrong scoping) |
 
 ## Templates
 

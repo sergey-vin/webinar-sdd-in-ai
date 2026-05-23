@@ -2,11 +2,13 @@
 
 ## Instructions for AI Agent
 
-You are creating the SDD (Spec-Driven Development) constitution for a project. This consists of 3 files in the `docs/` directory (or `specs/` if the project prefers):
+You are creating the SDD (Spec-Driven Development) constitution for a project. This consists of 3 files in the `docs/` directory:
 
 1. **`mission.md`** — What this project is, who it's for, and why it exists
 2. **`tech-stack.md`** — What technologies are used and how they connect
 3. **`roadmap.md`** — What's been built and what's planned
+
+Constitution lives in `docs/` — it's about the project's identity, not feature tracking.
 
 ## Before writing anything
 
@@ -30,22 +32,18 @@ Use `AskUserQuestion` to clarify:
 
 ### For roadmap.md
 
-- What features are already shipped? (Group by logical phases)
-- What's planned next? (Upcoming phases, in priority order)
+- What features are already shipped? (Group by feature/journey, not by arbitrary phases)
+- What's planned next? (Upcoming features, in priority order)
 - Are there known gaps in existing features?
 - What features have been explicitly ruled out? (Not "not yet" but "not ever" or "not for MVP")
 
 ## File structure
 
-Use the templates in `sdd/templates/` as starting points. Key rules:
+Use the templates in `templates/` as starting points. Key rules:
 
 - **mission.md** opens with What/Why in plain language. No jargon. A non-technical stakeholder should understand it.
 - **tech-stack.md** lists technologies with one-line descriptions. Links to detailed docs where they exist. Includes key architectural decisions at the bottom.
-- **roadmap.md** uses `[x]` for completed items, `[ ]` for planned. Each phase has a one-line title and links to relevant docs. Keep phase names short.
-
-## Example output
-
-See `sdd/templates/mission.md`, `sdd/templates/tech-stack.md`, `sdd/templates/roadmap.md` for structure.
+- **roadmap.md** uses `[x]` for completed items, `[ ]` for planned. **Do NOT use arbitrary phase numbers** ("Phase 1", "Phase 2") — use feature names that link to specs: `### [Booking](../specs/booking/plan.md) (Apr 2026) [x]`.
 
 ## After creating files
 
