@@ -61,10 +61,10 @@ Group specs by domain. If the product has a "trainer" domain with booking, avail
 
 ### docs/roadmap.md
 
-- Everything found in code goes under shipped sections with `[x]`
-- Ask user what's planned for upcoming sections
-- **Link each section to its spec** — don't use arbitrary phase numbers
-- Group by feature/journey, not by chronological order
+- **Shipped section**: group by time period (month/quarter), each item a 1-line user-facing summary linking to its spec, `[x]` for complete milestones, `[~]` for partially shipped
+- **Planned section**: flat priority-ordered list, one line per item linking to its spec
+- No phase numbers, no implementation details (RPCs, tables, schema)
+- Ask user what's planned and in what priority order
 
 ## Phase 4: Create Journey Specs
 
@@ -89,6 +89,7 @@ For patterns that apply across multiple features, create convention docs in `doc
 
 - `docs/architecture/{domain}.md` — non-negotiable system constraints (multi-tenancy, routing, security)
 - `docs/design-system.md` — design tokens, typography, component patterns
+- `docs/components/README.md` — shared UI component index (domain-neutral, reuse-first rule)
 - `docs/{domain}/README.md` — data model conventions, query patterns
 
 **Key distinction:**
@@ -138,6 +139,7 @@ docs/
 ├── architecture/
 │   └── {domain}.md
 ├── design-system.md       # If design tokens/patterns exist
+├── components/README.md   # Shared UI components (domain-neutral)
 └── {domain}/README.md     # Data model conventions
 
 specs/

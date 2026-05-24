@@ -32,8 +32,8 @@ Use `AskUserQuestion` to clarify:
 
 ### For roadmap.md
 
-- What features are already shipped? (Group by feature/journey, not by arbitrary phases)
-- What's planned next? (Upcoming features, in priority order)
+- What features are already shipped? (Group chronologically — by month/quarter)
+- What's planned next? (Upcoming features, in priority order — no phase numbers)
 - Are there known gaps in existing features?
 - What features have been explicitly ruled out? (Not "not yet" but "not ever" or "not for MVP")
 
@@ -43,7 +43,7 @@ Use the templates in `templates/` as starting points. Key rules:
 
 - **mission.md** opens with What/Why in plain language. No jargon. A non-technical stakeholder should understand it.
 - **tech-stack.md** lists technologies with one-line descriptions. Links to detailed docs where they exist. Includes key architectural decisions at the bottom.
-- **roadmap.md** uses `[x]` for completed items, `[ ]` for planned. **Do NOT use arbitrary phase numbers** ("Phase 1", "Phase 2") — use feature names that link to specs: `### [Booking](../specs/booking/plan.md) (Apr 2026) [x]`.
+- **roadmap.md** has two sections: **Shipped** (chronological timeline by time period, each item a 1-line user-facing summary linking to its spec, `[x]` for complete milestones, `[~]` for partial) and **Planned** (flat priority-ordered list, one line per item linking to its spec). No phase numbers, no implementation details (RPCs, tables, schema), no duplication of spec content.
 
 ## After creating files
 

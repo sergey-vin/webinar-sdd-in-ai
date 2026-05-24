@@ -18,6 +18,7 @@ docs/                          # Conventions, architecture, "how to build here"
 │   ├── multi-tenancy.md       #     (one per architectural domain)
 │   └── ...
 ├── design-system.md           #   Tokens, typography, component patterns
+├── components/README.md       #   Shared UI component index (domain-neutral)
 └── {domain}/README.md         #   Data model conventions, query patterns
 
 specs/                         # Journey specs, "what was/will be built"
@@ -39,6 +40,8 @@ The project's identity and rules. Answers: what is this, who is it for, what tec
 **Architecture** (`architecture/*.md`): non-negotiable system constraints — multi-tenancy model, routing, security. "How it works."
 
 **Conventions** (`design-system.md`, `{domain}/README.md`): data model conventions, component patterns, query patterns. "How to build here." These emerge from shipped features when patterns become reusable.
+
+**Shared components** (`components/README.md`): index of reusable UI components used across multiple domains. Domain-neutral — don't bury shared component docs inside a single domain folder. Rule: check here before building new UI.
 
 **Key rule:** docs/ describes **constraints and patterns**. It does NOT track what's shipped/planned — that's specs/.
 
@@ -145,9 +148,14 @@ Chat appears in multiple journeys (negotiation in negotiate-and-pay, support in 
 
 A spec that just links to other specs is not a spec. If "Platform MVP" is just a checklist of "profile done, sessions done, booking done" pointing to their own specs — delete it. Each feature should have exactly one spec.
 
-### Phase numbers in roadmap
+### Roadmap format
 
-Don't number phases ("Phase 1", "Phase 2"). Phase boundaries are arbitrary and don't correspond to features. Link roadmap sections to their specs instead: `### [Booking](../specs/booking/plan.md) (Apr 2026) [x]`.
+The roadmap is a navigation document, not a feature tracker. Two sections:
+
+- **Shipped**: chronological timeline grouped by time period. Each item is a 1-line user-facing summary linking to its spec. No table names, RPCs, or schema details. Use `[x]` for complete milestones, `[~]` for partially shipped specs.
+- **Planned**: flat priority-ordered list. Each item is one line linking to its spec. No phases, no timelines, no sub-checklists.
+
+Don't duplicate spec content in the roadmap — the spec has the details, the roadmap has the summary.
 
 ### Mixing docs/ and specs/
 

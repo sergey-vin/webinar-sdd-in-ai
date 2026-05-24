@@ -52,7 +52,7 @@ For each inaccuracy found:
 1. Fix the spec file to match code reality
 2. If it's a legitimate gap (feature should exist but doesn't), mark it as `[ ]` in plan.md and add to Known Gaps in requirements.md
 3. Fix implementation docs if they contain the same error
-4. Update docs/roadmap.md if the gap affects phase completion
+4. Update docs/roadmap.md if the gap changes a milestone from `[x]` to `[~]`
 
 ### 5. Report format
 

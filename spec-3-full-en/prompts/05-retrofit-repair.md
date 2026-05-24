@@ -31,6 +31,16 @@ Scan every file in `docs/` for these red flags:
 
 For each violation found: create or extend the appropriate `specs/*/plan.md` to cover the orphaned content, then replace the docs/ checklist with a link to that spec.
 
+### Check docs/ for misplaced shared content
+
+Look for shared component docs, reuse rules, or cross-domain conventions buried inside a domain-specific folder (e.g., `docs/trainer/components/` for components used by trainer + subscriber + generic views). These should live in a domain-neutral location like `docs/components/` so all module developers can find them.
+
+For each misplaced shared doc:
+1. `git mv` it to the domain-neutral location
+2. Create an index (e.g., `docs/components/README.md`) with a reuse-first rule
+3. Update cross-references in docs/README.md, CLAUDE.md, and any linking files
+4. If code duplication exists because the docs were hidden, create a spec to track the migration (don't fix code during a docs pass)
+
 ### Check specs/ for docs content that docs/ is missing
 
 Scan every file in `specs/` and note any architecture constraints, component usage rules, or data model conventions that **also need to exist in docs/** as living rules. But:
@@ -53,29 +63,80 @@ For each meta-tracker found:
 4. Delete the meta-tracker
 5. Update docs/README.md index
 
-## Step 3: Fix roadmap phase numbers
+## Step 3: Fix roadmap structure
 
-Replace arbitrary phase numbers with spec links:
+The roadmap is a **navigation document** — it tells you what shipped and what's planned, linking to specs for details. It should NOT duplicate spec content.
 
-**Before:**
+### Shipped section: chronological timeline
+
+Organize shipped work by **time period** (month/quarter), not by spec. Multiple specs developed in the same period appear together. Each item is a **1-line user-facing summary** linking to its spec.
+
+**Before (wrong — per-spec sections with implementation details):**
 ```markdown
 ### Phase 4: Trainer SaaS MVP (Mar 2026) [x]
-- [x] Trainer profile
-- [x] Availability editor
+- [x] Trainer profile editor with slug-based URLs
+- [x] biz_trainer_profiles table with RLS
+- [x] Public directory with JSON-LD, OG tags
+- [x] get_trainer_stats RPC
 ```
 
-**After:**
+**After (right — chronological, high-level, linked):**
 ```markdown
-### [Trainer Profile & Directory](../specs/trainer-profile/plan.md) (Mar 2026) [x]
-- [x] Trainer profile editor
-- [x] Public directory with search
+### Mar–Apr 2026
 
-### [Trainer Availability](../specs/trainer-availability/plan.md) (Mar 2026) [x]
-- [x] Weekly grid editor
-- [x] Specific-date overrides
+- [x] [Trainer Profile](../specs/trainer-profile/plan.md): profile editor, public directory with search, SEO, verification badge
+- [x] [Availability](../specs/trainer-availability/plan.md): drag-to-paint weekly grid, date overrides, multi-city
+- [x] [Sessions](../specs/trainer-sessions/plan.md): trainer calendar, session lifecycle, client sessions view
 ```
 
-If a roadmap section covers multiple specs, split it. Each section should link to exactly one spec.
+Rules for shipped items:
+- **User-facing value only** — no table names, RPCs, RLS policies, migration files
+- **One line per spec** — the spec has the details, the roadmap has the summary
+- **Milestone markers** on the time period heading when all specs in that period are complete
+
+### Partially shipped specs
+
+Use `[~]` when a spec has shipped items AND planned items remaining:
+
+```markdown
+### Client Tracking (Apr 2026) [~]
+
+Schema and trainee-facing UI shipped for all four; trainer-side views not yet built:
+
+- [x] [Homework](../specs/trainer-homework/plan.md): trainee checklist with done/not-done, due dates
+- [x] [Weight](../specs/trainer-weight/plan.md): weight logging with trend chart
+```
+
+### Planned section: flat priority order
+
+Planned items go in a **single flat section** ordered by priority. No phases, no timelines, no sub-checklists. Each item is one line linking to its spec.
+
+**Before (wrong — phases with nested details):**
+```markdown
+### Phase 7: Payments (Q3 2026)
+- [ ] Stripe checkout integration
+- [ ] Webhook handling for payment confirmation
+- [ ] Email receipt templates
+- [ ] Refund logic with partial amounts
+```
+
+**After (right — flat, priority-ordered, linked):**
+```markdown
+## Planned
+
+Priority order. Details in linked specs.
+
+- [ ] [Client pays trainer](../specs/billing-payments/plan.md) — Stripe checkout during booking, refunds, email receipts
+- [ ] [SEO Phase 2-5](../specs/seo/plan.md) — feature landing pages, local SEO, content marketing
+- [ ] [Rentier enhancements](../specs/rentier-property/plan.md) — CSV export, projected vs actual charts
+```
+
+### What NOT to put in the roadmap
+
+- **Schema details**: table names, column definitions, RLS policies
+- **Implementation details**: RPCs, cron jobs, migration steps
+- **Duplicated spec content**: if the spec has a detailed plan, don't repeat it — link to it
+- **Time estimates for planned work**: planned items have priority order, not dates
 
 ## Step 4: Add domain prefixes
 
@@ -168,6 +229,12 @@ Shipped specs stay. They're the permanent record. Convention docs may be extract
 ### Mixing multiple features in one spec
 If a spec covers profile + booking + sessions + calendar, it's too broad. Split into separate specs, one per feature journey.
 
+### Shared components buried in a domain folder
+
+If shared UI components (used across multiple domains) are documented inside a domain-specific folder like `docs/trainer/components/`, they're invisible to anyone working on other modules — and people will duplicate them instead of reusing them.
+
+Fix: move shared component docs to a domain-neutral location like `docs/components/`. Create an index (`docs/components/README.md`) with the rule: "check here before building new UI." If duplicated implementations already exist (e.g., status colors copy-pasted across 4 files), don't fix the code during a docs pass — create a spec (e.g., `specs/design-consistency/plan.md`) tracking the migration as planned work.
+
 ### Gutting specs to "fix" separation
 Replacing a spec's "Decisions Visible in Code" section with a link to docs/ destroys the sealed record. The correct fix is to ensure docs/ also has the convention — the spec keeps its original content unchanged.
 
@@ -181,7 +248,9 @@ After repair, the structure should satisfy:
 - [ ] Every `docs/` file contains only conventions, architecture, or constitution — no **orphaned** checklists (roadmap checklists that link to specs are fine)
 - [ ] Every convention visible in specs/ is **also** captured in the appropriate docs/ file (specs stay untouched)
 - [ ] No meta-trackers exist
-- [ ] Roadmap sections link to specs, not phase numbers
+- [ ] Roadmap shipped section is chronological with high-level user-facing summaries (no RPCs/tables/schema)
+- [ ] Roadmap planned section is a flat priority-ordered list linking to specs
+- [ ] Shared component docs live in a domain-neutral location, not buried under a single domain
 - [ ] Spec folders have domain prefixes where applicable
 - [ ] Every database table maps to at least one spec (Table → Spec Index)
 - [ ] All cross-references are valid (no broken links)

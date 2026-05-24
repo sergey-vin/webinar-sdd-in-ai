@@ -1,35 +1,35 @@
-# Roadmap — {Project Name}
+# Roadmap
 
-Shipped features are marked `[x]`. Planned items are `[ ]`. Each section links to its spec.
+Shipped work is chronological with `[x]`. Milestone `[x]` marks when a spec is fully delivered. Partially done specs show `[~]`. Planned items are `[ ]` in priority order — details in the linked `specs/*/plan.md`.
 
 ---
 
-## {Product Area 1}
+## {Product Area} ({Month Year}) [x]
 
-### [{Feature Name}](../specs/{domain}-{feature}/plan.md) ({Month Year}) [x]
+- [x] **[{Feature}](../specs/{domain}-{feature}/plan.md)** — 1-line user-facing summary of what shipped
 
-- [x] Shipped item 1
-- [x] Shipped item 2
+<!-- Shipped items: high-level, user-facing value only. -->
+<!-- No table names, RPCs, RLS policies, migration files. -->
+<!-- One line per spec — the spec has the details, the roadmap has the summary. -->
 
-### [{Another Feature}](../specs/{domain}-{feature-2}/plan.md) ({Month Year}) [x]
+## {Product Area} ({Month Year}) [~]
 
-- [x] Shipped item 3
-- [x] Shipped item 4
+Brief note on what's shipped vs what remains:
 
-<!-- Do NOT use "Phase 1", "Phase 2" numbering. -->
-<!-- Use feature names that link to their specs. -->
-<!-- Phase boundaries are arbitrary; feature boundaries are meaningful. -->
+- [x] **[{Feature}](../specs/{domain}-{feature}/plan.md)** — what shipped
+- [x] **[{Feature 2}](../specs/{domain}-{feature-2}/plan.md)** — what shipped
+
+<!-- Use [~] when a spec has shipped items AND planned items remaining. -->
 
 ---
 
 ## Planned
 
-### [{Planned Feature}](../specs/{domain}-{feature-3}/plan.md)
+Priority order. Details in linked specs.
 
-- [ ] Planned item 1
-- [ ] Planned item 2
+- [ ] [{Planned Feature}](../specs/{domain}-{feature-3}/plan.md) — 1-line summary
+- [ ] [{Another Feature}](../specs/{domain}-{feature-4}/plan.md) — 1-line summary
 
-## Not Planned
-
-<!-- Features explicitly excluded from the roadmap and why. -->
-<!-- These are conscious decisions, not forgotten items. -->
+<!-- Flat priority order. No phases, no timelines, no sub-checklists. -->
+<!-- Each item is one line linking to its spec. -->
+<!-- Don't duplicate spec content here — link to it. -->
