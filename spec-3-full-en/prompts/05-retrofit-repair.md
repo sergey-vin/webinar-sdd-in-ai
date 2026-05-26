@@ -22,14 +22,18 @@ After `03-retrofit-audit.md` has been run and the user has reviewed the output. 
 
 Scan every file in `docs/` for these red flags:
 
-- **Orphaned checklists** (`[x]`/`[ ]`) that have **no corresponding spec** — these need a spec created for them
+- **Orphaned checklists** (`[x]`/`[ ]`) that have **no corresponding spec** — these need a spec created for them, OR (if cross-cutting) a parallel tracker
 - **Phase trackers** ("Phase 1 done, Phase 2 in progress") that **don't link to specs** — these need spec links added
 - **Feature changelogs** ("Added X in commit Y") — these are spec history, not conventions
 - **Planned items** ("TODO: implement Z") that have **no spec tracking them** — these need a spec
 
-**Exception:** A roadmap file in docs/ that uses checklists but links to specs is fine — it's a navigation document, not a spec. Don't move it.
+**Exceptions:**
+- A roadmap file in docs/ that uses checklists but links to specs is fine — it's a navigation document, not a spec. Don't move it.
+- A [parallel tracker](../README.md#parallel-trackers) under `docs/trackers/` that uses checklists where each row links to a spec is also fine — it's an index of a cross-cutting initiative.
 
-For each violation found: create or extend the appropriate `specs/*/plan.md` to cover the orphaned content, then replace the docs/ checklist with a link to that spec.
+For each violation found, decide:
+- **Single-feature work** → create or extend the appropriate `specs/*/plan.md` to cover the orphaned content, then replace the docs/ checklist with a link to that spec
+- **Cross-cutting initiative** (touches 2+ specs, stakeholder-reportable as a milestone) → promote to a parallel tracker at `docs/trackers/{initiative}.md`, distribute the actual items into matching spec `plan.md`s, and link from both ends
 
 ### Check docs/ for misplaced shared content
 
@@ -60,8 +64,9 @@ For each meta-tracker found:
 1. Check if it has any unique content not covered by other specs
 2. Move unique content to the appropriate spec
 3. Move planned items to the roadmap or appropriate spec's "Planned" section
-4. Delete the meta-tracker
-5. Update docs/README.md index
+4. **Decide:** is the bundle a genuine cross-cutting initiative (security push, accuracy improvements, code-quality sweep) that stakeholders need to report on as a milestone? If yes, **don't just delete** — promote it to a [parallel tracker](../README.md#parallel-trackers) at `docs/trackers/{initiative}.md`. The tracker is the legitimate home for a cross-cutting bundle; it's in `docs/`, not `specs/`, and it's honest about being an index rather than pretending to be a feature.
+5. If the bundle has no genuine cross-cutting purpose (it really was just a wrapper around existing specs), delete the meta-tracker
+6. Update docs/README.md index — add the new tracker to its "Parallel trackers" section if you promoted one
 
 ## Step 3: Fix roadmap structure
 
@@ -245,13 +250,14 @@ Moving `docs/roadmap.md` → `specs/roadmap.md` just because it has checklists c
 
 After repair, the structure should satisfy:
 
-- [ ] Every `docs/` file contains only conventions, architecture, or constitution — no **orphaned** checklists (roadmap checklists that link to specs are fine)
+- [ ] Every `docs/` file contains only conventions, architecture, constitution, or parallel trackers — no **orphaned** checklists (roadmap and `docs/trackers/` checklists that link to specs are fine)
 - [ ] Every convention visible in specs/ is **also** captured in the appropriate docs/ file (specs stay untouched)
-- [ ] No meta-trackers exist
+- [ ] No meta-trackers exist in `specs/`; cross-cutting bundles that earn their keep live as parallel trackers in `docs/trackers/`
 - [ ] Roadmap shipped section is chronological with high-level user-facing summaries (no RPCs/tables/schema)
 - [ ] Roadmap planned section is a flat priority-ordered list linking to specs
 - [ ] Shared component docs live in a domain-neutral location, not buried under a single domain
 - [ ] Spec folders have domain prefixes where applicable
 - [ ] Every database table maps to at least one spec (Table → Spec Index)
+- [ ] Parallel trackers (if any) are listed in `docs/README.md`, and their items link to the spec where the work lives
 - [ ] All cross-references are valid (no broken links)
 - [ ] CLAUDE.md / project instructions updated with new paths

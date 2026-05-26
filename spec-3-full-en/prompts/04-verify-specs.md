@@ -53,6 +53,7 @@ For each inaccuracy found:
 2. If it's a legitimate gap (feature should exist but doesn't), mark it as `[ ]` in plan.md and add to Known Gaps in requirements.md
 3. Fix implementation docs if they contain the same error
 4. Update docs/roadmap.md if the gap changes a milestone from `[x]` to `[~]`
+5. If the changed item appears in any parallel tracker under `docs/trackers/`, update the tracker row's state too — trackers index spec state and must stay consistent. See [Core Principles → Parallel trackers](../README.md#parallel-trackers).
 
 ### 5. Report format
 

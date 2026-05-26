@@ -19,6 +19,9 @@ docs/                          # Conventions, architecture, "how to build here"
 │   └── ...
 ├── design-system.md           #   Tokens, typography, component patterns
 ├── components/README.md       #   Shared UI component index (domain-neutral)
+├── trackers/                  #   Cross-cutting initiative trackers (see Core Principles)
+│   ├── security-hardening.md  #     (one per cross-cutting initiative)
+│   └── ...
 └── {domain}/README.md         #   Data model conventions, query patterns
 
 specs/                         # Journey specs, "what was/will be built"
@@ -118,6 +121,24 @@ The roadmap (`docs/roadmap.md`) is a **navigation document**, not a spec. It use
 
 Only move files when the move improves discoverability. Moving `docs/roadmap.md` → `specs/roadmap.md` because "it has checklists" inflates the git diff with no added value. The test: does the move help someone find the file? If not, skip it.
 
+### Parallel trackers
+
+Some initiatives are **cross-cutting**: they touch multiple feature specs (e.g. "code quality", "accuracy improvements", "security hardening", "UX consistency"). A stakeholder asking "is the security milestone done?" doesn't want to read seven `specs/*/plan.md` files and mentally union the relevant `[ ]` items — they want one page.
+
+A **parallel tracker** is a `docs/` file (conventionally under `docs/trackers/`) that indexes a cross-cutting initiative. It is not a spec, and it is not the same as the meta-tracker anti-pattern (see Anti-Patterns below). Rules:
+
+- Lives in `docs/`, never `specs/`. Conventionally `docs/trackers/{initiative}.md`, kebab-case.
+- Each row points to **the spec where the work lands**, or to the parking-lot entry that tracks it. The work itself stays in the spec — the tracker only indexes it.
+- A row has a status (`[x]` shipped / `[~]` partial / `[ ]` planned) and a link to the canonical location.
+- Closed (shipped) rows stay forever — historical evidence of what changed and why. Never delete entries.
+- Each spec's own `plan.md` may include a `tracked in [trackers/X.md]` annotation on the relevant `[ ]` items so the cross-reference is visible from both ends.
+
+**Trackers vs anti-pattern meta-trackers:** the meta-tracker anti-pattern lives in `specs/` and bundles other specs to pretend it's a feature. A parallel tracker lives in `docs/`, never claims to be a feature, and is honest about being an index.
+
+**When to create one:** only when an initiative spans 2+ specs *and* needs to be reportable as a milestone on its own. Don't create a tracker for work that lives entirely inside one spec — the spec is already the right home.
+
+**Initiative trackers vs menu trackers:** some trackers are *closed-scope* (a defined initiative like "Q3 2026 security push") and others are *open-scope* (a living menu like "accuracy improvements grouped by cost tier"). Both shapes are fine; the rules above apply to both.
+
 ## Journeys, Not Modules
 
 This is the most important principle. Organize specs around what the **user** does, not how the **code** is structured.
@@ -147,6 +168,8 @@ Chat appears in multiple journeys (negotiation in negotiate-and-pay, support in 
 ### Meta-trackers
 
 A spec that just links to other specs is not a spec. If "Platform MVP" is just a checklist of "profile done, sessions done, booking done" pointing to their own specs — delete it. Each feature should have exactly one spec.
+
+If the bundle is genuinely useful — stakeholders want a cross-cutting milestone view — promote it to a [parallel tracker](#parallel-trackers) in `docs/trackers/` instead of a meta-spec in `specs/`. The distinction is location and intent: trackers in `docs/` are honest indices; trackers in `specs/` pretend to be features.
 
 ### Roadmap format
 

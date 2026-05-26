@@ -97,6 +97,21 @@ For patterns that apply across multiple features, create convention docs in `doc
 - Specs describe **what was/will be built** — feature checklists, decisions, gaps
 - Orphaned checklists (`[x]`/`[ ]`) without a corresponding spec belong in specs/. Exception: `docs/roadmap.md` uses checklists as a navigation index — see [Core Principles](../README.md#core-principles)
 
+### Phase 5b: Identify cross-cutting initiatives → parallel trackers
+
+While discovering features, watch for **cross-cutting initiatives** — work that spans 2+ journeys and is meaningful as a single milestone (e.g., a quarterly "security hardening" push, an "accuracy improvements" menu, a "code quality" sweep). Surfacing signals:
+
+- A pre-existing review document (e.g. `CODE_QUALITY_REVIEW.md`, `SECURITY_AUDIT.md`) at the repo root or in `docs/` whose items touch multiple specs
+- An old Cursor-style `tasks.mdc` development checklist that organised the original push
+- A stakeholder ask: "is initiative X done?" that no single spec can answer
+
+For each, create a **parallel tracker** at `docs/trackers/{initiative}.md` (see [Core Principles → Parallel trackers](../README.md#parallel-trackers)):
+
+- Each row links to the spec where the work landed (`[x]`) or where it's queued (`[ ]`)
+- Distribute the actual work items into the matching spec's `plan.md` so the spec stays the canonical source — the tracker is only an index
+- Optionally add `tracked in [trackers/X.md]` annotations on the relevant spec items so the cross-reference is visible from both ends
+- Don't create a tracker for work that lives entirely inside one spec — the spec is already the right home
+
 ## Phase 6: Build Table → Spec Index
 
 Create a mapping in `docs/README.md` of every database table to its spec(s). This is the integrity check:

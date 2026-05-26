@@ -135,3 +135,4 @@ What setup is needed before testing.
 - Ensure validation.md covers every item in plan.md
 - Update `docs/roadmap.md` — add a link from the roadmap section to this spec
 - Check: does every database table this feature touches have a spec? Update the Table → Spec Index in `docs/README.md`
+- If this feature contributes to a cross-cutting initiative already tracked under `docs/trackers/` (e.g., security hardening, accuracy improvements), add the relevant `plan.md` items there with a link back to your spec — and annotate the items in your `plan.md` with `tracked in [trackers/X.md]`. See [Core Principles → Parallel trackers](../README.md#parallel-trackers).
