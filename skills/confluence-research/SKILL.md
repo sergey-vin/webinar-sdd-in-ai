@@ -79,4 +79,4 @@ Answer first. Lead with **"Partial answer:"** when it's from a snippet or a poss
 
 ## Pending live verification
 
-Not run. Confirm: `confluence_search` accepts CQL and a limit param, and **whether it returns a text excerpt** (load-bearing — no excerpt means every factual answer forces a `get`, changing the cost profile, same as the OneDrive snippet question); `confluence_get_page` returns body text (not just storage-format XML that needs parsing) and the last-modified metadata for citation; CQL `text ~` search behaves as expected. Record in RETRO.
+Not run. Confirm: `confluence_search` accepts CQL and a limit param, and **whether it returns a text excerpt** (load-bearing — no excerpt means every factual answer forces a `get`, changing the cost profile, same as the OneDrive snippet question); `confluence_get_page` returns body text (not just storage-format XML that needs parsing) and the last-modified metadata for citation; CQL `text ~` search behaves as expected. Note the result where the deployment tracks verification.

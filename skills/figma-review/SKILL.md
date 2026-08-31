@@ -91,4 +91,4 @@ Source: [flow/frame name] · [what in it grounds the answer]
 
 ## Pending live verification
 
-Not run. Confirm (some shared with figma-fundamentals): `get_screenshot` returns a usable render for a node id; `get_design_context` returns enough structure to tell a wired flow from a static mockup; the hidden-text cross-check is actually possible (depends on whether extraction includes invisible nodes — the load-bearing figma-fundamentals gate); a node id can be resolved from a CEO-supplied Figma URL, or whether the CEO must select the frame in-app first (changes how "review this" is invoked). Record in RETRO.
+Not run. Confirm (some shared with figma-fundamentals): `get_screenshot` returns a usable render for a node id; `get_design_context` returns enough structure to tell a wired flow from a static mockup; the hidden-text cross-check is actually possible (depends on whether extraction includes invisible nodes — the load-bearing figma-fundamentals gate); a node id can be resolved from a CEO-supplied Figma URL, or whether the CEO must select the frame in-app first (changes how "review this" is invoked). Note the result where the deployment tracks verification.

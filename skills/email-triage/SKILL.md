@@ -70,4 +70,4 @@ Rules: verdict line first, carrying scope + lookback + timeframe (this is where 
 
 ## Pending live verification
 
-Not yet run against a real mailbox. Before trusting it, confirm: `list-mail-folders` returns a folder named exactly `Inbox` (some tenants localize or nest it — if so, the folder rule needs a well-known-name `inbox` fallback, record in RETRO); the `$filter` date syntax is accepted as written; `from` in `$select` yields a usable sender name; whether the tenant domain is derivable for the ranking rule (if not, ranking step 2 needs another structural cue).
+Not yet run against a real mailbox. Before trusting it, confirm: `list-mail-folders` returns a folder named exactly `Inbox` (some tenants localize or nest it — if so, the folder rule needs a well-known-name `inbox` fallback); the `$filter` date syntax is accepted as written; `from` in `$select` yields a usable sender name; whether the tenant domain is derivable for the ranking rule (if not, ranking step 2 needs another structural cue).

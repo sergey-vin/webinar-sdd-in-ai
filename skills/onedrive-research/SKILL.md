@@ -63,6 +63,6 @@ Answer first. When the answer is snippet-only or the file couldn't be extracted,
 
 Content-read semantics confirmed (no extraction tool; bytes only; two write/link tools present in the read-only preset and kept out of the allow-list). Still to confirm:
 
-- **Does `search-onedrive-files` return content snippets or only titles/ids?** Load-bearing — no snippets means every factual answer forces a full download and the cost model above is wrong. Record in RETRO.
-- **Does the harness actually enforce `allowed-tools`?** The tool bans are only real if it does. Record in RETRO.
+- **Does `search-onedrive-files` return content snippets or only titles/ids?** Load-bearing — no snippets means every factual answer forces a full download and the cost model above is wrong. Note the result where the deployment tracks verification.
+- **Does the harness actually enforce `allowed-tools`?** The tool bans are only real if it does. Note the result where the deployment tracks verification.
 - Does `get-drive-item` return modified-by/when for citation?

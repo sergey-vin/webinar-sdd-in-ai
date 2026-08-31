@@ -40,7 +40,7 @@ The API token lives in the keychain, exported into the server's environment by i
 
 ## What this skill cannot do — say so, don't fake it
 
-Only the four read tools are available. If the user asks to **comment, transition, assign, create, or edit** a ticket or page, that is a write — it cannot be done here. Say so plainly and offer what you can (e.g. "I can draft the comment text for you to post"). Never attempt a write tool, never claim one ran, never silently do nothing. (Read-only is phase 1, pending the security gate; a scoped write-with-approval capability is a deliberate later decision, not the permanent shape — see the CEO note in RETRO.)
+Only the four read tools are available. If the user asks to **comment, transition, assign, create, or edit** a ticket or page, that is a write — it cannot be done here. Say so plainly and offer what you can (e.g. "I can draft the comment text for you to post"). Never attempt a write tool, never claim one ran, never silently do nothing. (Read-only is phase 1, pending the security gate; a scoped write-with-approval capability is a deliberate later decision, not the permanent shape.)
 
 ## Untrusted content — a ticket and a page are attacker-reachable
 

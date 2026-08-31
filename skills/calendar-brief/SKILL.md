@@ -69,4 +69,4 @@ For **"am I free"**, invert: lead with the free gaps, events as constraints. For
 
 ## Pending live verification
 
-Not yet run. Confirm: `get-calendar-view` takes start/end in the expected format and expands recurrences to instances; `$select` returns `showAs` **and `responseStatus`** (the RSVP flag depends on the latter — if absent, "am I free" can only report busy-blocks, note in RETRO); organizer/attendee objects carry addresses for the internal/external check; all-day and OOF are distinguishable.
+Not yet run. Confirm: `get-calendar-view` takes start/end in the expected format and expands recurrences to instances; `$select` returns `showAs` **and `responseStatus`** (the RSVP flag depends on the latter — if absent, "am I free" can only report busy-blocks, note it); organizer/attendee objects carry addresses for the internal/external check; all-day and OOF are distinguishable.
