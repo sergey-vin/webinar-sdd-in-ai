@@ -1,10 +1,12 @@
 ---
 name: onedrive-research
-description: Answer a question from the CEO's OneDrive documents — "what did our GTM deck say about pricing", "find the board financials and summarize Q3", "pull the latest strategy doc", "what do we have on the Acme partnership". Read-only. Load ms365-fundamentals first.
+description: LIVE-MCP FALLBACK — prefer kb-research for any OneDrive content question when the local knowledge mirror (~/kb) is installed; use this only when kb is absent or doesn't hold the item. Answers a question from the CEO's OneDrive documents — "what did our GTM deck say about pricing", "find the board financials and summarize Q3". Read-only. Load ms365-fundamentals first.
 allowed-tools: mcp__ms365__search-onedrive-files, mcp__ms365__get-drive-item, mcp__ms365__list-drive-item-versions, mcp__ms365__download-bytes
 ---
 
 Load **ms365-fundamentals** before the first tool call. This skill reads document contents — the widest injection surface in the M365 set.
+
+**Route to [`kb-research`](../kb-research/SKILL.md) first.** If the local mirror is installed (`kb status` succeeds), document questions belong there — it reads transcribed markdown instead of pulling bytes through the context window, and it can actually read Office formats, which this skill cannot. This skill is the fallback for a machine without kb, or an item the index doesn't hold; when falling back, say so.
 
 ## The content-read reality (verified 2026-08-31)
 

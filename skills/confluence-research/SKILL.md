@@ -1,10 +1,12 @@
 ---
 name: confluence-research
-description: Answer a question from Confluence — "what does our runbook say about X", "find the PRD for the pricing change", "what did we decide about the Acme deal", "summarize the Q3 planning page". Read-only. Load ms365-fundamentals then atlassian-fundamentals first.
+description: LIVE-MCP FALLBACK — prefer kb-research for any Confluence content question when the local knowledge mirror (~/kb) is installed; use this only when kb is absent or doesn't hold the page. Answers a question from Confluence — "what does our runbook say about X", "find the PRD for the pricing change". Read-only. Load ms365-fundamentals then atlassian-fundamentals first.
 allowed-tools: mcp__atlassian__confluence_search, mcp__atlassian__confluence_get_page
 ---
 
 Load **[`ms365-fundamentals`](../ms365-fundamentals/SKILL.md)** and **[`atlassian-fundamentals`](../atlassian-fundamentals/SKILL.md)** first. The read-only self-check must have passed this session.
+
+**Route to [`kb-research`](../kb-research/SKILL.md) first.** If the local mirror is installed (`kb status` succeeds), page questions belong there — cached pages are clean markdown (no storage-format markup problem) and cost an index grep instead of live CQL + page fetches. This skill is the fallback for a machine without kb, or a page the index doesn't hold; when falling back, say so.
 
 ## What this does
 
