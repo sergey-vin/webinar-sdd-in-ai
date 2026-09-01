@@ -29,7 +29,19 @@ Per the folder rule: `list-mail-folders` → take the `id` of the folder whose `
 "Check my email" underspecifies. Use these unless the user says otherwise, and record them in the verdict line (below) so two runs read consistently:
 
 - **Scope:** unread only.
-- **Lookback:** last 7 days **only when no timeframe is implied**. "Today" / "today's email" / "this morning" → since local midnight. "Since I last looked" with no anchor → 24h. State which window you used in the verdict line.
+- **Lookback: resolve the CEO's words first, then fall back.**
+
+| They say | Window |
+|---|---|
+| "today", "today's email", "this morning", "now", "so far today" | since local midnight |
+| "since I last looked", "anything new", "what did I miss" | last 24h |
+| "this week" | since Monday, local |
+| "last N days/hours", an explicit date | exactly that |
+| *nothing at all* — "check my email", "anything for me" | last 24h; **if that returns nothing, widen once to 7 days and say you did** |
+
+  Mailbox timezone decides "midnight" — take it from `get-mailbox-settings` when
+  the window is day-based, and name the zone in the verdict line. Never silently
+  use a different window than the words asked for.
 - **Ordering:** newest first.
 
 Fetch minimally: `$filter=isRead eq false and receivedDateTime ge <ISO>`, `$select=subject,from,receivedDateTime`, `$orderby=receivedDateTime desc`, `$top=25`. `$top` is the fetch ceiling, not what you show.
