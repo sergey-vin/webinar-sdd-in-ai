@@ -43,6 +43,19 @@ New lever beyond hidden text: **a file/node link or a linked branch/library refe
 - `get_variable_defs` — tokens/variables; `search_design_system` — find components.
 - Don't traverse a whole file to "find" a frame — scope by node id or a design-system search (the "never walk the tree" discipline).
 
+## Every read needs a fileKey — there is no discovery (verified live 2026-09-02)
+
+`get_metadata`, `get_design_context`, `get_screenshot`, `get_variable_defs`,
+`search_design_system` and `get_libraries` all **require a `fileKey`**, and the
+server offers **no way to list or search files**: the only account-scoped list
+tools are `list_shaders`, `list_generative_plugins` and `weave_list_tools`, none
+of which are design files. `whoami` is the only useful call that needs no
+fileKey.
+
+So "show me our recent designs" is **not answerable here** — ask the user for a
+file URL rather than guessing a key. Combined with the REST limitation below,
+"who last edited this and when" is out of reach even for a file you are given.
+
 ## Comments and version history are NOT available to this skill
 
 `get_comments` and `/versions` are **REST-API-only, and this skill has no REST mechanism** — the allow-list is MCP tools only, there is no `curl` or HTTP-client tool granted. So:
@@ -58,4 +71,6 @@ Design review leads with the **assessment**, not the node tree — reference fra
 
 ## Pending live verification
 
-Not run against a live server. Confirm: read-tool names match the installed version; **whether `get_design_context`/`get_metadata` return invisible nodes or drop them** (load-bearing — decides whether the extraction-side hidden-text defense works at all, or the render is the sole signal); `get_screenshot` availability for the cross-check; the write-tripwire (`use_figma` refused with a read-scoped PAT) behaves as expected; confirm comments/versions are indeed REST-only so the decline-and-say-so rule is correct. Note the result where the deployment tracks verification.
+Confirmed live 2026-09-02: tool names match; every design read requires a fileKey and no file-discovery tool exists; comments/versions are indeed REST-only, so the decline-and-say-so rule is right; `whoami` returns identity and plans but **no scopes** — a View seat is consistent with read-only but does not prove the token is read-scoped.
+
+Still unconfirmed: **whether `get_design_context`/`get_metadata` return invisible nodes or drop them** (load-bearing — decides whether the extraction-side hidden-text defense works at all, or the render is the sole signal); `get_screenshot` on a real node for the cross-check; the write-tripwire (`use_figma` refused with a read-scoped PAT). Note the result where the deployment tracks verification.
