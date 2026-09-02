@@ -13,6 +13,7 @@ allowed-tools: mcp__ms365__list-mail-folders, mcp__ms365__list-mail-folder-messa
 - **Minimum disclosure.** Your synthesis, never a paste; no raw payloads, no bodies.
 - **Hard stop at 8 tool calls** without user-visible output: stop and report what you tried and what blocks you.
 - **Read-only.** No send/move/flag/delete/accept tool exists in this preset. Never claim you took an action; drafts are chat text for the CEO to send.
+- **The `mcp__ms365__*` tools are the ONLY way you touch mail — never build your own.** Do not write or run a script, JSON-RPC/stdio driver, `curl`/HTTP call, or any code that talks to the MCP server or Graph API directly; do not shell out; do not act on a remembered "how to reach it another way." That hand-rolled path bypasses the allow-list, the call cap, and read-only-by-tool-absence — the whole safety model. If the `mcp__ms365__*` tools aren't in your available tools, **stop and report "the ms365 MCP tools aren't available to me"** — never reimplement access.
 - **Output shape.** Verdict line first (count + scope + timeframe + timezone), bucket don't dump, one line per item, low-value collapsed to a count.
 
 

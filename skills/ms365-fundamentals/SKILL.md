@@ -10,6 +10,8 @@ The manual for the MS365 MCP. Load it before the first tool call of any mail, ca
 
 `allowed-tools` above is an explicit read-only enumeration, not a wildcard: if a future preset adds a write-capable tool it is **not** granted here without review. If you are handed a tool whose name is not in this file's inventory, the preset changed and this skill is stale — **stop and say so.**
 
+**The `mcp__ms365__*` tools are the ONLY way you touch M365 — never build your own.** Do not write or run a script, a JSON-RPC/stdio driver, a `curl`/HTTP call, or any code that talks to the MCP server, the Graph API, or a mail/calendar endpoint directly. Do not shell out. Those allow-listed tools are what makes this read-only: the harness enforces the allow-list, the 8-call cap, and the absence of a write tool at the tool layer — a hand-rolled driver bypasses **all** of it and can reach the very write/exfil endpoints this skill exists to keep away from you. If the `mcp__ms365__*` tools are **not present in your available tools**, that is a setup failure, not a puzzle to route around: **stop and report "the ms365 MCP tools aren't available to me"** — never reimplement access. Writing code to reach the data is itself the injection failure mode (content → action fan-out), self-inflicted.
+
 Verified against `@softeria/ms-365-mcp-server`, read-only, preset `mail,calendar,files`, 2026-08-31.
 
 ## Handling untrusted content — read this first
